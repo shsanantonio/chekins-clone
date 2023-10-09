@@ -21,7 +21,7 @@ const offers = [
 
 export default function Offers() {
   return (
-    <section id="offers" className="bg-whitegrey font-Montserrat ">
+    <section id="offers" className="bg-[#F8F8F8] font-Montserrat ">
       <div className="container flex flex-col pb-6 px-4 lg:w-10/12 mx-auto mt-10 space-y-12 md:space-y-6 ">
         <div className="flex flex-col space-y-12 ">
           <div className="text-center flex flex-row  justify-center  md:justify-between items-center  md:text-left">
