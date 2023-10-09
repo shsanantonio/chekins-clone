@@ -1,6 +1,7 @@
 'use client';
 import { useState, useCallback, useEffect } from 'react';
 import { useRef } from 'react';
+import debounce from '@/utils/debounce';
 
 const SearchedHotel = ({ hotel, handleEdit, handleDelete, handleTagClick }) => {
   return (
@@ -61,20 +62,6 @@ const SearchBar = () => {
   const [searchedResults, setSearchedResults] = useState({});
   const [goOpen, setGoOpen] = useState(true);
   const inputRef = useRef('');
-
-  const debounce = (func) => {
-    let timer; // for the setTimeout function and so it can be cleared
-    return function (...args) {
-      // the function returned from debounce
-      const context = this;
-      if (timer) clearTimeout(timer); //every time the user hits a key under 300 ms, the invocation for function handleChange reset the timer,  in other words, cancel the previous plans with handleChange
-      timer = setTimeout(() => {
-        // this sets the time out to run after the 300 ms
-        timer = null;
-        func.apply(context, args);
-      }, 350);
-    };
-  };
 
   const handleChange = (value) => {
     fetch(
