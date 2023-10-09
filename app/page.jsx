@@ -5,6 +5,7 @@ import BecomeAMember from '@/components/section/BecomeAMember';
 import PopularLocations from '@/components/section/PopularLocations';
 import WeAreUnique from '@/components/section/WeAreUnique';
 import Offers from '@/components/section/Offers';
+import Testimonials from '@/components/section/Testimonials';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <PopularLocations />
       <WeAreUnique />
       <Offers />
+      <Testimonials />
     </div>
   );
 }
