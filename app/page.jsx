@@ -4,6 +4,7 @@ import Benefits from '@/components/section/Benefits';
 import BecomeAMember from '@/components/section/BecomeAMember';
 import PopularLocations from '@/components/section/PopularLocations';
 import WeAreUnique from '@/components/section/WeAreUnique';
+import Offers from '@/components/section/Offers';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <BecomeAMember />
       <PopularLocations />
       <WeAreUnique />
+      <Offers />
     </div>
   );
 }
