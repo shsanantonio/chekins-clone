@@ -64,6 +64,7 @@ const locations = [
     originalPrice: 982,
   },
 ];
+
 export default function PopularLocations() {
   return (
     <section id="locations" className="bg-[#F8F8F8] pb-3">
