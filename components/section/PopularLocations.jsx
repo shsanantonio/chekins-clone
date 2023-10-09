@@ -65,7 +65,7 @@ const locations = [
   },
 ];
 
-export default function PopularLocations() {
+const PopularLocations = () => {
   return (
     <section id="locations" className="bg-[#F8F8F8] pb-3">
       <div className="container flex flex-col px-4 lg:w-10/12 mx-auto   mt-10 space-y-12 md:space-y-7">
@@ -235,4 +235,6 @@ export default function PopularLocations() {
       </div>
     </section>
   );
-}
+};
+
+export default PopularLocations;

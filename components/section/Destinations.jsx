@@ -1,4 +1,4 @@
-export default function Destinations() {
+const Destinations = () => {
   return (
     <section id="Destinations" className="bg-[#F8F8F8]">
       <div className="container flex flex-col pb-6   px-4 lg:w-10/12 mx-auto mt-16 space-y-12 md:space-y-0">
@@ -137,4 +137,6 @@ export default function Destinations() {
       </div>
     </section>
   );
-}
+};
+
+export default Destinations;

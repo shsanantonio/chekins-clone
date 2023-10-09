@@ -8,7 +8,7 @@ async function getData() {
   } catch (error) {}
 }
 
-export default async function WeAreUnique() {
+const WeAreUnique = async () => {
   const offers = await getData();
 
   return (
@@ -116,4 +116,6 @@ export default async function WeAreUnique() {
       </div>
     </section>
   );
-}
+};
+
+export default WeAreUnique;

@@ -1,4 +1,4 @@
-export default function Testimonials() {
+const Testimonials = () => {
   return (
     <section id="Testimonials" className="">
       <div className="container flex flex-col px-4 lg:w-10/12 mx-auto mt-10 space-y-12">
@@ -244,4 +244,6 @@ export default function Testimonials() {
       </div>
     </section>
   );
-}
+};
+
+export default Testimonials;

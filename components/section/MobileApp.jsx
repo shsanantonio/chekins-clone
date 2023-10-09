@@ -1,4 +1,4 @@
-export default function MobileApp() {
+const MobileApp = () => {
   return (
     <section id="mobileApp" className="pt-20">
       <div className=" bg-[#F4F4F4] container flex-col rounded-[30px] items-center lg:items-start flex md:flex-row mx-auto lg:w-10/12 2xl:w-7/12">
@@ -55,4 +55,6 @@ export default function MobileApp() {
       </div>
     </section>
   );
-}
+};
+
+export default MobileApp;

@@ -19,7 +19,7 @@ const offers = [
   },
 ];
 
-export default function Offers() {
+const Offers = () => {
   return (
     <section id="offers" className="bg-[#F8F8F8] font-Montserrat ">
       <div className="container flex flex-col pb-6 px-4 lg:w-10/12 mx-auto mt-10 space-y-12 md:space-y-6 ">
@@ -147,4 +147,6 @@ export default function Offers() {
       </div>
     </section>
   );
-}
+};
+
+export default Offers;

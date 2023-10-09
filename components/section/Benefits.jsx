@@ -21,7 +21,7 @@ const benefits = [
   },
 ];
 
-export default function Benefits() {
+const Benefits = () => {
   return (
     <section id="process" className="mt-[82px]">
       <div className="container font-normal text-base leading-7 flex flex-col px-4 lg:w-10/12 mx-auto mt-10 space-y-12 md:space-y-6 ">
@@ -143,4 +143,6 @@ export default function Benefits() {
       </div>
     </section>
   );
-}
+};
+
+export default Benefits;

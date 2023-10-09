@@ -1,4 +1,4 @@
-export default function BecomeAMember() {
+const BecomeAMember = () => {
   return (
     <section id="member" className="mt-4">
       <div className="container items-center flex flex-col px-4 lg:w-10/12 mx-auto  space-y-12 md:space-y-6">
@@ -115,4 +115,6 @@ export default function BecomeAMember() {
       </div>
     </section>
   );
-}
+};
+
+export default BecomeAMember;

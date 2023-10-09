@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function Header() {
+const Header = () => {
   return (
     <nav className="flex relative container  mx-auto p-6 lg:w-10/12 hover:higherIndexScroll focus:higherIndexScroll">
       <div className="flex-1 items-center">
@@ -162,4 +162,6 @@ export default function Header() {
       </div>
     </nav>
   );
-}
+};
+
+export default Header;

@@ -1,5 +1,6 @@
 import Newsletter from './Newsletter';
-export default function Footer() {
+
+const Footer = () => {
   return (
     <footer className="bg-[#002248] higherIndexFooter footer bottom-0 mt-[110px] pt-20 items-center relative">
       <div className="Toastify" id="1"></div>
@@ -137,4 +138,6 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

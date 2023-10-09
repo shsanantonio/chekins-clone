@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchForm from './SearchForm';
 
-const Tagline = () => {
+const Hero = () => {
   return (
     <div className="container bg-[#37B7FE] rounded-lg lg:w-10/12 flex flex-col  pt-10 px-6 mx-auto  ">
       <div className="flex  space-y-0 items-center justify-between md:space-y-0 md:flex-row">
@@ -22,4 +22,4 @@ const Tagline = () => {
   );
 };
 
-export default Tagline;
+export default Hero;

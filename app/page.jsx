@@ -1,5 +1,5 @@
 import SearchForm from '@/components/SearchForm';
-import Tagline from '@/components/Tagline';
+import Hero from '@/components/Hero';
 import Benefits from '@/components/section/Benefits';
 import BecomeAMember from '@/components/section/BecomeAMember';
 import PopularLocations from '@/components/section/PopularLocations';
@@ -11,7 +11,7 @@ import MobileApp from '@/components/section/MobileApp';
 export default function Home() {
   return (
     <div>
-      <Tagline />
+      <Hero />
       {/* <SearchForm /> */}
       <Benefits />
       <BecomeAMember />
