@@ -1,6 +1,9 @@
+import Newsletter from './Newsletter';
 export default function Footer() {
   return (
-    <footer className="bg-[#002248] higherIndexFooter footer bottom-0 mt-[110px] pt-20 items-center">
+    <footer className="bg-[#002248] higherIndexFooter footer bottom-0 mt-[110px] pt-20 items-center relative">
+      <div className="Toastify" id="1"></div>
+      <Newsletter />
       <div>
         <div className="pb-10">
           <div className=" flex flex-col md:flex-row lg:space-x-0 md:space-x-7 space-x-0 space-y-3 lg:w-10/12 mx-auto flex-wrap items-center justify-center md:items-start">
