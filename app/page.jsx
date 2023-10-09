@@ -1,5 +1,5 @@
-import SearchForm from '@/components/SearchForm';
-import Hero from '@/components/Hero';
+import SearchForm from '@/components/ui/SearchForm';
+import Hero from '@/components/ui/Hero';
 import Benefits from '@/components/section/Benefits';
 import BecomeAMember from '@/components/section/BecomeAMember';
 import PopularLocations from '@/components/section/PopularLocations';
