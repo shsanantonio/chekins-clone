@@ -1,5 +1,3 @@
-import Head from 'next/head';
-
 import Header from '@/components/layout/Header';
 import Main from '@/components/layout/Main';
 import Footer from '@/components/layout/Footer';
@@ -19,9 +17,6 @@ export const metadata = {
 export default function RootLayout(props) {
   return (
     <html lang="en">
-      <Head>
-        <meta name="robots" content="all" />
-      </Head>
       <body className={inter.className}>
         <Header />
         <Main {...props} />
