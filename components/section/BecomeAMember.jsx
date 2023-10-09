@@ -31,12 +31,14 @@ export default function BecomeAMember() {
             </div>
             <div className="flex right-0 md:top-0 lg:top-[50%] justify-end items-center pt-[50px] pl-10 w-full lg:w-2/3">
               <div className="relative">
-                <div className="bg-[#002248] h-[280px] xl:h-[336px] flex justify-between xl:w-[307px] w-[240px] rounded-[20px]">
+                <div className="bg-[#002248] overflow-hidden h-[280px] xl:h-[336px] flex justify-between xl:w-[307px] w-[240px] rounded-[20px]">
                   <div className="py-6 px-9 gap-0 2xl:gap-6 flex flex-col justify-between">
                     <div className="text-[#fff] flex flex-col space-y-4">
                       <span className="text-[26px] xl:text-[31px] font-bold">
-                        <div className="ribbon ribbon-top-left">
-                          <span>Free</span>
+                        <div className="top-[0px] right-[110px] rotate-[-45deg] relative">
+                          <div className="bg-[#3498db] text-[#fff] block py-2 absolute text-center drop-shadow-md uppercase w-[200px] text-[18px]">
+                            Free
+                          </div>
                         </div>
                       </span>
                     </div>
