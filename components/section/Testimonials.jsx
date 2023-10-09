@@ -5,7 +5,7 @@ export default function Testimonials() {
         <div className="flex flex-col space-y-12">
           <div className="text-center items-center flex flex-row justify-between  md:text-left">
             <div>
-              <span className="text-finalblue font-bold text-sm">
+              <span className="text-[#1893f8] font-bold text-sm">
                 Testimonials
               </span>
               <h2 className="font-homepage text-4xl font-bold text-center text-bluedark md:text-left">
@@ -64,7 +64,12 @@ export default function Testimonials() {
                 >
                   <div
                     className="rec rec-swipable"
-                    style={{ display: 'flex', flexDirection: 'row' }}
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'row',
+                      justifyContent: 'center',
+                      gap: '5%',
+                    }}
                   >
                     <div className="rec rec-carousel-item rec-carousel-item-0 rec-carousel-item-visible">
                       <div

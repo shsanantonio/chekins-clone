@@ -83,7 +83,12 @@ export default function Offers() {
                 >
                   <div
                     className="rec rec-swipable"
-                    style={{ display: 'flex', flexDirection: 'row' }}
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'row',
+                      justifyContent: 'center',
+                      gap: '5%',
+                    }}
                   >
                     {offers.map((offer) => (
                       <div

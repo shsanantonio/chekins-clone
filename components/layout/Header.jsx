@@ -1,27 +1,29 @@
+import Link from 'next/link';
+
 export default function Header() {
   return (
     <nav className="flex relative container  mx-auto p-6 lg:w-10/12 hover:higherIndexScroll focus:higherIndexScroll">
       <div className="flex-1 items-center">
-        <a href="/" className="">
+        <Link href="/" className="">
           <img
             src="/images/logo.png"
             className="object-cover h-11 lg:h-[75px]"
             alt="navbarlogo"
           />
-        </a>
+        </Link>
       </div>
       <div className="flex flex-row items-center space-x-4">
         <div className="hidden space-x-2 gap-0 2xl:gap-6 xl:space-x-4 text-[#002248] font-[600] xl:flex">
-          <a className="hover:text-[#1893F8] nav-link" href="/">
+          <Link className="hover:text-[#1893F8] nav-link" href="/">
             Home
-          </a>
-          <a
+          </Link>
+          <Link
             aria-current="page"
             className="hover:text-[#1893F8] nav-link active"
             href="/membership"
           >
             Membership
-          </a>
+          </Link>
           <div className="bg-[#AEAEAE]  w-[2px] justify-center items-center"></div>
           <div className="dropdown relative">
             <button
