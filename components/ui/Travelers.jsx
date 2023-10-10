@@ -229,7 +229,7 @@ const Travelers = ({ setTravelersInfo, isHomePage = true }) => {
       {isHomePage && (
         <label
           htmlFor="roomInput"
-          className="-mb-[4px] hidden lg:block ml-[27px] text-[13px]"
+          className="-mb-[4px] hidden lg:block ml-[30px] text-[13px] leading-6"
         >
           Travelers
         </label>
@@ -237,7 +237,9 @@ const Travelers = ({ setTravelersInfo, isHomePage = true }) => {
       <input
         type="text"
         id="roomInput"
-        className="py-3 px-0 ml-[10px] text-[14px] lg:text-[12px] xl:text-[14px]  pl-[22px] lg:pl-[7px] bg-[#fff]  xl:w-[300px] md:lg:w-auto sm:w-[auto] w-full text-sm rounded-md  ml-0 md:ml-5 focus:outline-none"
+        className={`py-3 px-0  text-[14px] lg:text-[12px] xl:text-[14px]  pl-[22px] lg:pl-[7px] bg-[#fff]  xl:w-[300px] md:lg:w-auto sm:w-[auto] w-full text-sm rounded-md  ml-0 focus:outline-none ${
+          isHomePage && 'ml-[10px] md:ml-6'
+        }`}
         value="1 Rooms , 2 Adults  , 0 Children"
         onChange={handleOnChange}
         onClick={handleOnClick}

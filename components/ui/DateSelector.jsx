@@ -17,11 +17,11 @@ const DateSelector = ({ setDateSelected, isHomePage = true }) => {
       <label
         className={`${
           !isHomePage && 'hidden'
-        } -mb-[4px] ml-[12px] sticky text-[13px]`}
+        } -mb-[4px] ml-[12px] sticky text-[13px] leading-6`}
       >
         Dates
       </label>
-      <div>
+      <div className="w-[100%]">
         <div className="react-datepicker__input-container">
           <span
             role="alert"
@@ -29,7 +29,7 @@ const DateSelector = ({ setDateSelected, isHomePage = true }) => {
             className="react-datepicker__aria-live"
           ></span>
           <DatePicker
-            className="-px-11 bg-[#fff] text-[14px] lg:text-[12px] xl:text-[14px]  flex-initial w-full h-10 rounded-md font-base px-3 py-2  focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+            className="-px-11 bg-[#fff] text-[14px] lg:text-[12px] xl:text-[14px]  flex-initial h-10 rounded-md font-base px-3 py-2  focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent w-[100%]"
             placeholderText="Check-in - Check-out"
             // dateFormat="yyyy-MM-dd HH:mm"
             selectsRange={true}

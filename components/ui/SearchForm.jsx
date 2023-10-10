@@ -44,7 +44,7 @@ const SearchForm = ({ isHomePage = true }) => {
               </div>
             </div>
           </div>
-          <div className="widthcalendar ml-0 lg:ml-[10px] flex items-center flex-row">
+          <div className="w-[100%] widthcalendar ml-0 lg:ml-[10px] flex items-center flex-row">
             <svg
               stroke="currentColor"
               fill="currentColor"
@@ -125,7 +125,7 @@ const SearchForm = ({ isHomePage = true }) => {
         <div className="w-[100%]">
           <div className="w-full text-gray-600">
             <div className="flex w-full relative  items-center flex-row">
-              <div className="px-3 py-2.5 rounded-full bg-[#F1F5F5]">
+              <div className="px-3 py-2.5 h-[40px] w-[40px] rounded-full bg-[#F1F5F5]">
                 <svg
                   width="15"
                   height="19"
@@ -156,8 +156,8 @@ const SearchForm = ({ isHomePage = true }) => {
             </div>
           </div>
         </div>
-        <div className="widthcalendar higherIndexNavBar  relative flex items-center flex-row">
-          <div className="px-2 py-2 mr-2 rounded-full bg-[#F1F5F5]">
+        <div className="w-[100%] widthcalendar higherIndexNavBar  relative flex items-center flex-row">
+          <div className="px-2 py-2 mr-2 h-[40px] w-[40px] rounded-full bg-[#F1F5F5]">
             <svg
               width="22"
               height="22"
@@ -197,7 +197,7 @@ const SearchForm = ({ isHomePage = true }) => {
               ></path>
             </svg>
           </div>
-          <div className="wrapperClassName">
+          <div className="wrapperClassName w-[100%]">
             <div>
               <div className="react-datepicker__input-container">
                 <span
@@ -217,10 +217,10 @@ const SearchForm = ({ isHomePage = true }) => {
           <div className="flex w-full lg:w-[auto] flex-row gap-2 ">
             <div className="relative lg:w-auto w-full text-gray-600">
               <div className="flex gap-2  lg:w-auto w-full flex-row">
-                <div className="px-3 py-[7px] flex items-center rounded-full bg-[#F1F5F5]">
+                <div className="px-3 py-[7px] h-[40px] w-[40px] flex items-center rounded-full bg-[#F1F5F5]">
                   <svg
-                    width="15"
-                    height="18"
+                    width="22"
+                    height="22"
                     viewBox="0 0 15 18"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"

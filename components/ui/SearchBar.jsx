@@ -112,13 +112,15 @@ const SearchBar = ({ setHotelName, isHomePage = true }) => {
       <label
         className={`${
           !isHomePage && 'hidden'
-        } -mb-[4px] sticky ml-[11px] text-[13px] `}
+        } -mb-[4px] sticky ml-[11px] text-[13px] leading-6`}
       >
         Going to
       </label>
       <div onClick={handleInputClick}>
         <input
-          className="bg-[#fff] ml-[11px] text-[14px] lg:text-[12px] xl:text-[14px]  w-[99%] file:absolute focus:outline-none focus:border-none  h-10 rounded-md font-base -mb-[4px] sticky"
+          className={`bg-[#fff] ml-[11px] text-[14px] lg:text-[12px] xl:text-[14px]  w-[99%] file:absolute focus:outline-none focus:border-none  h-10 rounded-md font-base -mb-[4px] sticky ${
+            !isHomePage && 'pl-4'
+          }`}
           placeholder="Enter a destination"
           type="text"
           id="default-search"
