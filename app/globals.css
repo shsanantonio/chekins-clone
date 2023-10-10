@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+.react-datepicker {
+  border: 1px solid #d4d4d4 !important;
+}
+
+.react-datepicker__header {
+  border-bottom: 1px solid #d4d4d4 !important;
+}
+
+.react-datepicker-popper {
+  top: -98px !important;
+}
+
+.react-datepicker-popper .react-datepicker {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
 .react-datepicker-wrapper {
   width: 100%;
+}
+
+.react-datepicker__month-container {
+  width: 500px;
+}
+
+.react-datepicker__day-names,
+.react-datepicker__week {
+  display: flex;
+}
+
+.react-datepicker__day,
+.react-datepicker__day-name {
+  flex: 1;
 }
