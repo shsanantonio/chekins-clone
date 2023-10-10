@@ -1,9 +1,22 @@
+'use client';
+
+import { useState } from 'react';
 import DateSelector from './DateSelector';
 import SearchBar from './SearchBar';
 import Travelers from './Travelers';
-import { useRouter } from 'next/navigation';
 
 const SearchForm = ({ isHomePage = true }) => {
+  const [hotelName, setHotelName] = useState('');
+  const [dateSelected, setDateSelected] = useState([]);
+  const [travelersInfo, setTravelersInfo] = useState([]);
+
+  // useEffect(() => {}, [hotelName]);
+  const handleSearchOnclick = () => {
+    console.log(hotelName);
+    console.log(dateSelected);
+    console.log(travelersInfo);
+  };
+
   return isHomePage ? (
     <div>
       <div className="bg-[#fff] top-10 relative z-10 drop-shadow-lg border border-gray-600 rounded-lg w-full items-center p-[6px]">
@@ -24,8 +37,10 @@ const SearchForm = ({ isHomePage = true }) => {
                   <path fill="none" d="M0 0h24v24H0z"></path>
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 1.74.5 3.37 1.41 4.84.95 1.54 2.2 2.86 3.16 4.4.47.75.81 1.45 1.17 2.26.26.55.47 1.5 1.26 1.5s1-.95 1.25-1.5c.37-.81.7-1.51 1.17-2.26.96-1.53 2.21-2.85 3.16-4.4C18.5 12.37 19 10.74 19 9c0-3.87-3.13-7-7-7zm0 9.75a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"></path>
                 </svg>
-
-                <SearchBar isHomePage={isHomePage} />
+                <SearchBar
+                  isHomePage={isHomePage}
+                  setHotelName={setHotelName}
+                />
               </div>
             </div>
           </div>
@@ -45,7 +60,10 @@ const SearchForm = ({ isHomePage = true }) => {
                 <path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zM4 9v10h16V9H4zm2 4h5v4H6v-4z"></path>
               </g>
             </svg>
-            <DateSelector isHomePage={isHomePage} />
+            <DateSelector
+              isHomePage={isHomePage}
+              setDateSelected={setDateSelected}
+            />
           </div>
           <div className="w-[100%] pl-[3px] lg:pl-0">
             <div className="relative mr-0">
@@ -65,7 +83,10 @@ const SearchForm = ({ isHomePage = true }) => {
                   </svg>
                 </div>
               </span>
-              <Travelers isHomePage={isHomePage} />
+              <Travelers
+                isHomePage={isHomePage}
+                setTravelersInfo={setTravelersInfo}
+              />
             </div>
           </div>
           <div className="w-[100%] lg:w-[25%]">
@@ -99,7 +120,7 @@ const SearchForm = ({ isHomePage = true }) => {
       </div>
     </div>
   ) : (
-    <div className="bg-[#002248] rounded-md drop-shadow-lg  w-full container mx-auto lg:w-full xl:w-11/12 items-center">
+    <div className="bg-[#002248] z-50 relative rounded-md drop-shadow-lg  w-full container mx-auto lg:w-full xl:w-11/12 items-center">
       <div className="flex justify-between gap-5 items-center space-x-0 md:space-x-0 px-3 py-3 flex-col lg:space-y-0 space-y-3 lg:flex-row">
         <div className="w-[100%]">
           <div className="w-full text-gray-600">
@@ -127,7 +148,10 @@ const SearchForm = ({ isHomePage = true }) => {
                 </svg>
               </div>
               <div className="search-location-input w-full">
-                <SearchBar isHomePage={isHomePage} />
+                <SearchBar
+                  isHomePage={isHomePage}
+                  setHotelName={setHotelName}
+                />
               </div>
             </div>
           </div>
@@ -181,7 +205,10 @@ const SearchForm = ({ isHomePage = true }) => {
                   aria-live="polite"
                   className="react-datepicker__aria-live"
                 ></span>
-                <DateSelector isHomePage={isHomePage} />
+                <DateSelector
+                  isHomePage={isHomePage}
+                  setDateSelected={setDateSelected}
+                />
               </div>
             </div>
           </div>
@@ -215,7 +242,10 @@ const SearchForm = ({ isHomePage = true }) => {
                     ></ellipse>
                   </svg>
                 </div>
-                <Travelers isHomePage={isHomePage} />
+                <Travelers
+                  isHomePage={isHomePage}
+                  setTravelersInfo={setTravelersInfo}
+                />
               </div>
             </div>
           </div>

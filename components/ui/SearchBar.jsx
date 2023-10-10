@@ -57,7 +57,7 @@ const SearchList = ({ data, handleTagClick }) => {
   }
 };
 
-const SearchBar = ({ setHotelName }) => {
+const SearchBar = ({ setHotelName, isHomePage = true }) => {
   const [searchText, setSearchText] = useState('');
   const [searchedResults, setSearchedResults] = useState({});
   const [goOpen, setGoOpen] = useState(true);
@@ -109,7 +109,13 @@ const SearchBar = ({ setHotelName }) => {
 
   return (
     <div className="search-location-input flex flex-col w-full">
-      <label className="-mb-[4px] sticky ml-[11px] text-[13px]">Going to</label>
+      <label
+        className={`${
+          !isHomePage && 'hidden'
+        } -mb-[4px] sticky ml-[11px] text-[13px] `}
+      >
+        Going to
+      </label>
       <div onClick={handleInputClick}>
         <input
           className="bg-[#fff] ml-[11px] text-[14px] lg:text-[12px] xl:text-[14px]  w-[99%] file:absolute focus:outline-none focus:border-none  h-10 rounded-md font-base -mb-[4px] sticky"
