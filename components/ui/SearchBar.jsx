@@ -27,22 +27,30 @@ const SearchedHotel = ({ hotel, handleEdit, handleDelete, handleTagClick }) => {
   );
 };
 
-const SearchList = ({ data, handleTagClick }) => {
+const SearchList = ({
+  data,
+  handleTagClick,
+  inputRef,
+  searchText,
+  handleonChange,
+}) => {
   //converts the array list into styled prompt cards
   const arrList = data.locationSuggestions;
 
   if (typeof arrList != 'undefined' && arrList.length > 0) {
     return (
-      <div className="search-location-input bg-white shadowbox absolute rounded-[15px] -top-[-60px] -left-[34px] w-[500px] xl:w-[600px] popup-zoom ">
+      <div className="search-location-input top-[-28px] left-[-24px] bg-white shadowbox absolute rounded-2xl border-neutral-300 overflow-hidden w-[500px] xl:w-[600px] popup-zoom shadow-xl z-10 border-[1px] ">
         <div className="input-container">
-          {/* <input
+          <input
             className="bg-[#fff] px-2 w-full shadowbox rounded-tl-[15px] rounded-tr-[15px] relative z-50 file:relative focus:outline-none focus:border-none flex-initial h-[95px] font-base "
             placeholder="Where are you going?"
             type="text"
-            value=""
-          /> */}
+            ref={inputRef}
+            value={searchText}
+            onChange={handleonChange}
+          />
 
-          <ul className="rounded-bl-[15px] rounded-br-[15px] overflow-y-auto h-[390px] w-full overflow-x-auto relative z-50    bg-white  flex flex-col gap-2">
+          <ul className="overflow-y-auto h-[390px] w-full overflow-x-auto relative z-50    bg-white  flex flex-col gap-2">
             {arrList.map((hotel) => (
               <SearchedHotel
                 key={hotel.id}
@@ -62,6 +70,7 @@ const SearchBar = ({ setHotelName, isHomePage = true }) => {
   const [searchedResults, setSearchedResults] = useState({});
   const [goOpen, setGoOpen] = useState(true);
   const inputRef = useRef('');
+  const searchListContainerRef = useRef('');
 
   const handleChange = (value) => {
     fetch(
@@ -86,6 +95,24 @@ const SearchBar = ({ setHotelName, isHomePage = true }) => {
    */
   const useDebounce = useCallback(debounce(handleChange), []); //makes sure to return the same debounced function instance, and will only change if the dependencies change, in this case, it has no dependency
 
+  const useOutsideAlerter = (ref) => {
+    useEffect(() => {
+      /**
+       * Close if clicked outside of dropdown
+       */
+      function handleClickOutside(event) {
+        if (ref.current && !ref.current.contains(event.target)) {
+          setGoOpen(false);
+        }
+      }
+
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }, [ref]);
+  };
+
   const handleTagClick = (hotel) => {
     setSearchText(hotel.fullName); // changes the value of input search field to the name of selected hotel
     setGoOpen(false); // closes the dropdown list
@@ -107,6 +134,8 @@ const SearchBar = ({ setHotelName, isHomePage = true }) => {
     useDebounce(e.target.value);
   };
 
+  useOutsideAlerter(searchListContainerRef);
+
   return (
     <div className="search-location-input flex flex-col w-full">
       <label
@@ -127,11 +156,18 @@ const SearchBar = ({ setHotelName, isHomePage = true }) => {
           ref={inputRef}
           value={searchText}
           onChange={handleonChange}
-          required
         />
       </div>
       {goOpen && (
-        <SearchList data={searchedResults} handleTagClick={handleTagClick} />
+        <div ref={searchListContainerRef}>
+          <SearchList
+            data={searchedResults}
+            handleTagClick={handleTagClick}
+            inputRef={inputRef}
+            searchText={searchText}
+            handleonChange={handleonChange}
+          />
+        </div>
       )}
     </div>
   );
