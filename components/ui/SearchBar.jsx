@@ -57,7 +57,7 @@ const SearchList = ({ data, handleTagClick }) => {
   }
 };
 
-const SearchBar = () => {
+const SearchBar = ({ setHotelName }) => {
   const [searchText, setSearchText] = useState('');
   const [searchedResults, setSearchedResults] = useState({});
   const [goOpen, setGoOpen] = useState(true);
@@ -87,22 +87,23 @@ const SearchBar = () => {
   const useDebounce = useCallback(debounce(handleChange), []); //makes sure to return the same debounced function instance, and will only change if the dependencies change, in this case, it has no dependency
 
   const handleTagClick = (hotel) => {
-    setSearchText(hotel.fullName);
-    // inputRef.current.value = hotel.fullName; // resets the value of input search field
-    // console.log(inputRef.current.value);
-    setGoOpen(false);
+    setSearchText(hotel.fullName); // changes the value of input search field to the name of selected hotel
+    setGoOpen(false); // closes the dropdown list
+    setHotelName(hotel.fullName);
+    // setHotelName(setSearchText);
   };
 
   const handleInputClick = (e) => {
     let val = '';
-    if (e.target.value) val = e.target.value; //if the input field is NOT empty, the same search list will be displayed, else default list will be shown
+    if (e.target.value) val = e.target.value; //if the input field is NOT empty, the same dropdown search list will be displayed, else default list will be shown
     handleChange(val);
-    setGoOpen(true); //Search list will reopen
+    setGoOpen(true); //dropdown list opens
   };
 
   const handleonChange = (e) => {
-    setGoOpen(true);
-    setSearchText(e.target.value);
+    setGoOpen(true); //dropdown list re-opens for any changes in text input that satisifes debounce timeout
+    setSearchText(e.target.value); //value of search input field
+
     useDebounce(e.target.value);
   };
 
