@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import SearchForm from '@/components/ui/SearchForm';
 import SearchMap from '@/components/ui/SearchMap';
 import Sort from '@/components/ui/Sort';
+import SearchFilter from '@/components/ui/SearchFilter';
 import HotelList from '@/components/ui/HotelList';
 
 const HotelListing = () => {
@@ -78,6 +79,10 @@ const HotelListing = () => {
           <div className="hidden  relative z-10  lg:flex flex-col w-3/12 space-y-2">
             <SearchMap />
             <Sort />
+            <SearchFilter
+              hotels={hotels}
+              setFilteredHotels={setFilteredHotels}
+            />
           </div>
           <HotelList hotels={filteredHotels} isSearching={isSearching} />
         </div>
