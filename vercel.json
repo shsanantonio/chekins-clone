@@ -8,6 +8,15 @@
           "value": "all"
         }
       ]
+    },
+    {
+      "source": "/hotel-listing",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "all"
+        }
+      ]
     }
   ]
 }
