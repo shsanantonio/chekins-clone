@@ -3,13 +3,20 @@ import { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-const DateSelector = ({ setDateSelected, isHomePage = true }) => {
-  const [dateRange, setDateRange] = useState([null, null]);
+const DateSelector = ({
+  dateSelected = [],
+  setDateSelected,
+  isHomePage = true,
+}) => {
+  const [dateRange, setDateRange] = useState(() => {
+    return dateSelected.length === 0 ? [null, null] : dateSelected;
+  });
   const [startDate, endDate] = dateRange;
 
   useEffect(() => {
-    if (startDate && endDate)
+    if (startDate && endDate) {
       setDateSelected([startDate.toISOString(), endDate.toISOString()]);
+    }
   }, [dateRange]);
 
   return (

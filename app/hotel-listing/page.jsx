@@ -7,49 +7,58 @@ import Sort from '@/components/ui/Sort';
 import SearchFilter from '@/components/ui/SearchFilter';
 import HotelList from '@/components/ui/HotelList';
 
+const defaultSearchParams = {
+  searchParams: {
+    location: {
+      id: '1738587',
+      name: 'The Beverly Hills Hotel',
+      fullName: 'The Beverly Hills Hotel, Beverly Hills, California, US',
+      type: 'Hotel',
+      city: 'Beverly Hills',
+      state: 'California',
+      country: 'US',
+      coordinates: {
+        lat: 34.081535,
+        long: -118.41385,
+      },
+      referenceId: '39600805',
+      referenceScore: 100000,
+      isTermMatch: true,
+    },
+    startDate: '2023-10-25T00:00:00-07:00',
+    endDate: '2023-10-27T00:00:00-07:00',
+    adults: 2,
+    children: 0,
+    occupancies: [
+      {
+        numOfAdults: 2,
+        childAges: [],
+      },
+    ],
+    isType: null,
+  },
+  currency: 'USD',
+  ipAddress: '185.187.168.191',
+  correlationId: 'chkIDffe5aefa-817c-4fe3-a602-bb2135909b1f',
+};
+
 const HotelListing = () => {
   const [hotels, setHotels] = useState([]);
   const [availableHotels, setAvailableHotels] = useState([]);
   const [filteredHotels, setFilteredHotels] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
+  const [searchFormData, setSearchFormData] = useState(() => {
+    const value = localStorage.getItem('searchParams');
+
+    if (value) {
+      return JSON.parse(value);
+    }
+
+    return defaultSearchParams;
+  });
 
   const fetchHotels = async () => {
     setIsSearching(true);
-
-    const body = {
-      searchParams: {
-        location: {
-          id: '1738587',
-          name: 'The Beverly Hills Hotel',
-          fullName: 'The Beverly Hills Hotel, Beverly Hills, California, US',
-          type: 'Hotel',
-          city: 'Beverly Hills',
-          state: 'California',
-          country: 'US',
-          coordinates: {
-            lat: 34.081535,
-            long: -118.41385,
-          },
-          referenceId: '39600805',
-          referenceScore: 100000,
-          isTermMatch: true,
-        },
-        startDate: '2023-10-25T00:00:00-07:00',
-        endDate: '2023-10-27T00:00:00-07:00',
-        adults: 2,
-        children: 0,
-        occupancies: [
-          {
-            numOfAdults: 2,
-            childAges: [],
-          },
-        ],
-        isType: null,
-      },
-      currency: 'USD',
-      ipAddress: '185.187.168.191',
-      correlationId: 'chkIDffe5aefa-817c-4fe3-a602-bb2135909b1f',
-    };
 
     try {
       const response = await fetch(
@@ -57,7 +66,7 @@ const HotelListing = () => {
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(body),
+          body: JSON.stringify(searchFormData),
         }
       );
       const data = await response.json();
@@ -68,40 +77,6 @@ const HotelListing = () => {
 
   const fetchHotelAvailability = async () => {
     setIsSearching(true);
-    const body = {
-      searchParams: {
-        location: {
-          id: '1738587',
-          name: 'The Beverly Hills Hotel',
-          fullName: 'The Beverly Hills Hotel, Beverly Hills, California, US',
-          type: 'Hotel',
-          city: 'Beverly Hills',
-          state: 'California',
-          country: 'US',
-          coordinates: {
-            lat: 34.081535,
-            long: -118.41385,
-          },
-          referenceId: '39600805',
-          referenceScore: 100000,
-          isTermMatch: true,
-        },
-        startDate: '2023-10-25T00:00:00-07:00',
-        endDate: '2023-10-27T00:00:00-07:00',
-        adults: 2,
-        children: 0,
-        occupancies: [
-          {
-            numOfAdults: 2,
-            childAges: [],
-          },
-        ],
-        isType: null,
-      },
-      currency: 'USD',
-      ipAddress: '',
-      correlationId: 'chkID07a72fa3-7354-49e5-b81e-1ee4585c94fd',
-    };
 
     try {
       const response = await fetch(
@@ -109,7 +84,7 @@ const HotelListing = () => {
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(body),
+          body: JSON.stringify(searchFormData),
         }
       );
       const data = await response.json();
@@ -136,7 +111,6 @@ const HotelListing = () => {
           Number(a.relevanceScore) < Number(b.relevanceScore) ? 1 : -1
         );
 
-        debugger;
         setAvailableHotels(sortedHotels);
         setFilteredHotels(sortedHotels);
         setIsSearching(false);

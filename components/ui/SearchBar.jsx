@@ -214,8 +214,10 @@ const SearchList = ({
   }
 };
 
-const SearchBar = ({ setHotelName, isHomePage = true }) => {
-  const [searchText, setSearchText] = useState('');
+const SearchBar = ({ location, setLocation, isHomePage = true }) => {
+  const [searchText, setSearchText] = useState(() => {
+    return location ? location.name : '';
+  });
   const [searchedResults, setSearchedResults] = useState({});
   const [goOpen, setGoOpen] = useState(true);
   const inputRef = useRef('');
@@ -265,8 +267,8 @@ const SearchBar = ({ setHotelName, isHomePage = true }) => {
   const handleTagClick = (hotel) => {
     setSearchText(hotel.fullName); // changes the value of input search field to the name of selected hotel
     setGoOpen(false); // closes the dropdown list
-    setHotelName(hotel.fullName);
-    // setHotelName(setSearchText);
+    setLocation(hotel);
+    // setLocation(setSearchText);
   };
 
   const handleInputClick = (e) => {

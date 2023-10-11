@@ -174,13 +174,23 @@ const TravelersOptions = ({ setOccupancies, setToggleTravelers }) => {
   );
 };
 
-const Travelers = ({ setOccupancies, isHomePage = true }) => {
+const Travelers = ({ occupancies, setOccupancies, isHomePage = true }) => {
   const [toggleTravelers, setToggleTravelers] = useState(false);
   const handleOnChange = (e) => {};
 
   const handleOnClick = () => {
     setToggleTravelers(true);
   };
+
+  useEffect(() => {
+    setOccupancies([
+      //Initial value of occupancies if user has not selected if no child & age were added
+      {
+        childAges: [],
+        numOfAdults: 2,
+      },
+    ]);
+  }, []);
 
   return (
     <div className="w-full flex flex-col">

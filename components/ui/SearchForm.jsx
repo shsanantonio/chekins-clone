@@ -1,20 +1,87 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import DateSelector from './DateSelector';
 import SearchBar from './SearchBar';
 import Travelers from './Travelers';
 
-const SearchForm = ({ isHomePage = true }) => {
-  const [hotelName, setHotelName] = useState('');
-  const [dateSelected, setDateSelected] = useState([]);
-  const [occupancies, setOccupancies] = useState([]);
+const defaultSearchParams = {
+  searchParams: {
+    location: {
+      id: '1738587',
+      name: 'The Beverly Hills Hotel',
+      fullName: 'The Beverly Hills Hotel, Beverly Hills, California, US',
+      type: 'Hotel',
+      city: 'Beverly Hills',
+      state: 'California',
+      country: 'US',
+      coordinates: {
+        lat: 34.081535,
+        long: -118.41385,
+      },
+      referenceId: '39600805',
+      referenceScore: 100000,
+      isTermMatch: true,
+    },
+    startDate: '2023-10-25T00:00:00-07:00',
+    endDate: '2023-10-27T00:00:00-07:00',
+    adults: 2,
+    children: 0,
+    occupancies: [
+      {
+        numOfAdults: 2,
+        childAges: [1, 4, 7],
+      },
+    ],
+    isType: null,
+  },
+  currency: 'USD',
+  ipAddress: '185.187.168.191',
+  correlationId: 'chkIDffe5aefa-817c-4fe3-a602-bb2135909b1f',
+};
 
-  // useEffect(() => {}, [hotelName]);
+const SearchForm = ({ isHomePage = true }) => {
+  const router = useRouter();
+  const [searchFormData, setSearchFormData] = useState(() => {
+    const value = localStorage.getItem('searchParams');
+
+    if (value) {
+      return JSON.parse(value);
+    }
+
+    return defaultSearchParams;
+  });
+  const [location, setLocation] = useState(() => {
+    return isHomePage ? null : searchFormData.searchParams.location;
+  });
+  const [dateSelected, setDateSelected] = useState(() => {
+    return isHomePage
+      ? []
+      : [
+          new Date(searchFormData.searchParams.startDate),
+          new Date(searchFormData.searchParams.endDate),
+        ];
+  });
+  const [occupancies, setOccupancies] = useState(() => {
+    return isHomePage ? [] : searchFormData.searchParams.occupancies;
+  });
+
   const handleSearchOnclick = () => {
-    console.log(hotelName);
-    console.log(dateSelected);
-    console.log(occupancies);
+    localStorage.setItem(
+      'searchParams',
+      JSON.stringify({
+        searchParams: {
+          location: location,
+          startDate: dateSelected[0],
+          endDate: dateSelected[1],
+          occupancies: occupancies,
+        },
+        currency: 'USD',
+      })
+    );
+
+    router.push('/hotel-listing');
   };
 
   return isHomePage ? (
@@ -39,7 +106,8 @@ const SearchForm = ({ isHomePage = true }) => {
                 </svg>
                 <SearchBar
                   isHomePage={isHomePage}
-                  setHotelName={setHotelName}
+                  location={location}
+                  setLocation={setLocation}
                 />
               </div>
             </div>
@@ -62,6 +130,7 @@ const SearchForm = ({ isHomePage = true }) => {
             </svg>
             <DateSelector
               isHomePage={isHomePage}
+              dateSelected={dateSelected}
               setDateSelected={setDateSelected}
             />
           </div>
@@ -85,6 +154,7 @@ const SearchForm = ({ isHomePage = true }) => {
               </span>
               <Travelers
                 isHomePage={isHomePage}
+                occupancies={occupancies}
                 setOccupancies={setOccupancies}
               />
             </div>
@@ -153,7 +223,8 @@ const SearchForm = ({ isHomePage = true }) => {
               <div className="search-location-input w-full">
                 <SearchBar
                   isHomePage={isHomePage}
-                  setHotelName={setHotelName}
+                  location={location}
+                  setLocation={setLocation}
                 />
               </div>
             </div>
@@ -210,6 +281,7 @@ const SearchForm = ({ isHomePage = true }) => {
                 ></span>
                 <DateSelector
                   isHomePage={isHomePage}
+                  dateSelected={dateSelected}
                   setDateSelected={setDateSelected}
                 />
               </div>
@@ -247,6 +319,7 @@ const SearchForm = ({ isHomePage = true }) => {
                 </div>
                 <Travelers
                   isHomePage={isHomePage}
+                  occupancies={occupancies}
                   setOccupancies={setOccupancies}
                 />
               </div>
