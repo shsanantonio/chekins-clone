@@ -247,7 +247,7 @@ const SearchForm = ({ isHomePage = true }) => {
                 </div>
                 <Travelers
                   isHomePage={isHomePage}
-                  setTravelersInfo={setTravelersInfo}
+                  setOccupancies={setOccupancies}
                 />
               </div>
             </div>

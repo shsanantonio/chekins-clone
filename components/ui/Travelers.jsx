@@ -34,11 +34,7 @@ const ChildAge = ({ setChildAge }) => {
   );
 };
 
-const TravelersOptions = ({
-  setOccupancies,
-  setToggleTravelers,
-  setTravelersInfo,
-}) => {
+const TravelersOptions = ({ setOccupancies, setToggleTravelers }) => {
   const [roomCount, setRoomCount] = useState(1);
   const [roomArr, setRoomArr] = useState([]);
   const [adultCount, setAdultCount] = useState(2);
@@ -104,11 +100,6 @@ const TravelersOptions = ({
 
   const handleDoneOnClick = () => {
     setAge();
-    setTravelersInfo({
-      room: roomCount,
-      adult: adultCount,
-      children: childrenCount,
-    });
     setToggleTravelers(false);
   };
 
@@ -185,7 +176,6 @@ const TravelersOptions = ({
 
 const Travelers = ({ setOccupancies, isHomePage = true }) => {
   const [toggleTravelers, setToggleTravelers] = useState(false);
-  const [travelersInfo, setTravelersInfo] = useState({});
   const handleOnChange = (e) => {};
 
   const handleOnClick = () => {
@@ -209,7 +199,6 @@ const Travelers = ({ setOccupancies, isHomePage = true }) => {
           isHomePage && 'ml-[10px] md:ml-6'
         }`}
         value="1 Rooms , 2 Adults  , 0 Children"
-        // value={`${travelersInfo.room} Rooms , ${travelersInfo.adult} Adults  , ${travelersInfo.children} Children`}
         onChange={handleOnChange}
         onClick={handleOnClick}
       />
@@ -217,7 +206,6 @@ const Travelers = ({ setOccupancies, isHomePage = true }) => {
         <TravelersOptions
           setOccupancies={setOccupancies}
           setToggleTravelers={setToggleTravelers}
-          setTravelersInfo={setTravelersInfo}
         />
       )}
     </div>
