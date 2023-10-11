@@ -1,12 +1,10 @@
 'use client';
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, Fragment } from 'react';
 
 const ChildAge = ({ setChildAge }) => {
   const handleOnChange = (e) => {
-    console.log(e.target.value);
     setChildAge(e.target.value);
   };
-
   return (
     <div className="flex flex-col space-y-3 items-center justify-between w-full">
       <select
@@ -36,76 +34,43 @@ const ChildAge = ({ setChildAge }) => {
   );
 };
 
-const Room = ({
-  roomCount,
-  handleDecrementAdult,
-  handleIncrementAdult,
-  handleDecremenChild,
-  handleIncrementChild,
-  adultCount,
-  childrenCount,
-  childrenageArr,
+const TravelersOptions = ({
+  setOccupancies,
+  setToggleTravelers,
+  setTravelersInfo,
 }) => {
-  return (
-    <div className="flex flex-col gap-2">
-      <h2 className="font-bold text-[16px] justify-center text-center flex mb-3">
-        Room {roomCount}
-      </h2>
-      <div className="flex flex-row items-center justify-between w-full">
-        <span className="w-2/4">Adults</span>
-        <div className="w-2/4 flex justify-between">
-          <button
-            onClick={handleDecrementAdult}
-            className="border-[1px] rounded-full px-2 border-[#1893F8] text-[#1893F8]"
-          >
-            -
-          </button>
-          <span>{adultCount}</span>
-          <button
-            onClick={handleIncrementAdult}
-            className="border-[1px] rounded-full px-2 border-[#1893F8] text-[#1893F8]"
-          >
-            +
-          </button>
-        </div>
-      </div>
-      <div className="flex flex-row items-center justify-between w-full">
-        <span className="w-2/4">Children</span>
-        <div className="w-2/4 flex justify-between">
-          <button
-            onClick={handleDecremenChild}
-            className=" sticky border-[1px] rounded-full px-2 text-[#838688] opacity-50 border-[#838688]"
-          >
-            -
-          </button>
-          <span>{childrenCount}</span>
-          <button
-            onClick={handleIncrementChild}
-            className="border-[1px] rounded-full px-2 border-[#1893F8] text-[#1893F8]"
-          >
-            +
-          </button>
-        </div>
-      </div>
-
-      {/* {childArr.length > 0 && <ChildAge childArr={childArr} />} */}
-      {childrenageArr}
-    </div>
-  );
-};
-const TravelersOptions = ({ setTravelersInfo }) => {
   const [roomCount, setRoomCount] = useState(1);
   const [roomArr, setRoomArr] = useState([]);
   const [adultCount, setAdultCount] = useState(2);
   const [childrenCount, setChildrenCount] = useState(0);
-  const [childArr, setChildArr] = useState([]);
-  const [childAge, setChildAge] = useState(0);
+  const [childAges, setChildAges] = useState([]); //[{childAges: [{0:14}], numOfAdults:2},{childAges: [{0:11}], numOfAdults:3}]
+  const [childAge, setChildAge] = useState(null);
   const [childrenageArr, setChildrenageArr] = useState([]);
   const [roomInfo, setRoomInfo] = useState([]);
   // const [roomInfo, setRoomInfo] = useState(    {
   //   childAges: [],
   //   numOfAdults: 2
   // })
+
+  const setAge = () => {
+    console.log('childAge', childAge);
+
+    setChildAges([...childAges, childAge]);
+    console.log(childAges);
+    setOccupancies([
+      ...roomInfo,
+      {
+        childAges: childAges,
+        numOfAdults: adultCount,
+      },
+    ]);
+  };
+
+  useEffect(() => {
+    if (childAge !== null) {
+      setAge();
+    }
+  }, [childAge]);
 
   const handleIncrementAdult = (e) => {
     e.preventDefault();
@@ -119,77 +84,85 @@ const TravelersOptions = ({ setTravelersInfo }) => {
 
   const handleIncrementChild = (e) => {
     e.preventDefault();
-    const obj = {};
-    obj[childrenCount] = childAge;
     if (childrenCount < 4) {
-      setChildArr([...childArr, obj]); //push childrencount as index, e.g. {[0]: childAge} into the array
+      setChildrenCount((count) => count + 1);
       setChildrenageArr([
         ...childrenageArr,
-        <ChildAge
-          key={childrenCount}
-          setChildAge={setChildAge}
-          setChildArr={setChildArr}
-        />,
+        <ChildAge key={childrenCount - 1} setChildAge={setChildAge} />,
       ]);
-      setChildrenCount((count) => count + 1);
     }
   };
 
   const handleDecremenChild = (e) => {
     e.preventDefault();
-    const tempArr = [...childrenageArr];
-    tempArr.pop(); //deletes a ChildAge component
     if (childrenCount > 0) {
-      setChildrenageArr(tempArr);
       setChildrenCount((count) => count - 1);
     }
   };
 
-  const handleRoomClick = () => {
-    // setRoomCount((prev) => prev + 1);
-    // if (roomCount < 4) {
-    //   setRoomArr([
-    //     ...roomArr,
-    //     <Room
-    //       key={roomCount}
-    //       handleDecrementAdult={handleDecrementAdult}
-    //       handleIncrementAdult={handleIncrementAdult}
-    //       handleDecremenChild={handleDecremenChild}
-    //       handleIncrementChild={handleIncrementChild}
-    //       adultCount={adultCount}
-    //       childrenCount={childrenCount}
-    //       childrenageArr={childrenageArr}
-    //     />,
-    //   ]);
-    // }
-  };
+  const handleRoomClick = () => {};
 
   const handleDoneOnClick = () => {
-    console.log(childArr);
-    setTravelersInfo([
-      ...roomInfo,
-      {
-        childAges: childArr,
-        numOfAdults: adultCount,
-      },
-    ]);
+    setAge();
+    setTravelersInfo({
+      room: roomCount,
+      adult: adultCount,
+      children: childrenCount,
+    });
+    setToggleTravelers(false);
   };
 
   return (
     <div className="flex gap-3 border ml-[37px] h-auto  overflow-y-scroll absolute shadow-2xl bg-white p-3 w-[240px] rounded-2xl flex-col">
       <span className="font-bold text-[17px]"> Travelers </span>
 
-      <Room
-        key={1}
-        roomCount={roomCount}
-        handleDecrementAdult={handleDecrementAdult}
-        handleIncrementAdult={handleIncrementAdult}
-        handleDecremenChild={handleDecremenChild}
-        handleIncrementChild={handleIncrementChild}
-        adultCount={adultCount}
-        childrenCount={childrenCount}
-        childrenageArr={childrenageArr}
-      />
+      <div className="flex flex-col gap-2">
+        <h2 className="font-bold text-[16px] justify-center text-center flex mb-3">
+          Room {roomCount}
+        </h2>
+        <div className="flex flex-row items-center justify-between w-full">
+          <span className="w-2/4">Adults</span>
+          <div className="w-2/4 flex justify-between">
+            <button
+              onClick={handleDecrementAdult}
+              className="border-[1px] rounded-full px-2 border-[#1893F8] text-[#1893F8]"
+            >
+              -
+            </button>
+            <span>{adultCount}</span>
+            <button
+              onClick={handleIncrementAdult}
+              className="border-[1px] rounded-full px-2 border-[#1893F8] text-[#1893F8]"
+            >
+              +
+            </button>
+          </div>
+        </div>
+        <div className="flex flex-row items-center justify-between w-full">
+          <span className="w-2/4">Children</span>
+          <div className="w-2/4 flex justify-between">
+            <button
+              onClick={handleDecremenChild}
+              className=" sticky border-[1px] rounded-full px-2 text-[#838688] opacity-50 border-[#838688]"
+            >
+              -
+            </button>
+            <span>{childrenCount}</span>
+            <button
+              onClick={handleIncrementChild}
+              className="border-[1px] rounded-full px-2 border-[#1893F8] text-[#1893F8]"
+            >
+              +
+            </button>
+            {/* {[...Array(childrenCount)].map((_, i) => {
+              <ChildAge setChildAge={setChildAge} />;
+            })} */}
+          </div>
+        </div>
+
+        {/* {childArr.length > 0 && <ChildAge childArr={childArr} />} */}
+        {childrenageArr}
+      </div>
       {roomArr}
 
       <div className="flex justify-end items-end  text-[#1893F8] font-[600] hover:underline">
@@ -210,18 +183,13 @@ const TravelersOptions = ({ setTravelersInfo }) => {
   );
 };
 
-const Travelers = ({ setTravelersInfo, isHomePage = true }) => {
-  // const [adultCount, setAdultCount] = useState(0);
-  // const [childrenCount, setChildrenCount] = useState(0);
-  // const [roomCount, setRoomCount] = useState({
-  //   numOfAdults: 0,
-  //   childAges: [],
-  // });
-
+const Travelers = ({ setOccupancies, isHomePage = true }) => {
+  const [toggleTravelers, setToggleTravelers] = useState(false);
+  const [travelersInfo, setTravelersInfo] = useState({});
   const handleOnChange = (e) => {};
 
   const handleOnClick = () => {
-    console.log('travel');
+    setToggleTravelers(true);
   };
 
   return (
@@ -241,10 +209,17 @@ const Travelers = ({ setTravelersInfo, isHomePage = true }) => {
           isHomePage && 'ml-[10px] md:ml-6'
         }`}
         value="1 Rooms , 2 Adults  , 0 Children"
+        // value={`${travelersInfo.room} Rooms , ${travelersInfo.adult} Adults  , ${travelersInfo.children} Children`}
         onChange={handleOnChange}
         onClick={handleOnClick}
       />
-      <TravelersOptions setTravelersInfo={setTravelersInfo} />
+      {toggleTravelers && (
+        <TravelersOptions
+          setOccupancies={setOccupancies}
+          setToggleTravelers={setToggleTravelers}
+          setTravelersInfo={setTravelersInfo}
+        />
+      )}
     </div>
   );
 };

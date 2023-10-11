@@ -17,7 +17,7 @@ const SearchedHotel = ({ hotel, handleEdit, handleDelete, handleTagClick }) => {
               <svg
                 stroke="currentColor"
                 fill="currentColor"
-                stroke-width="0"
+                strokeWidth="0"
                 viewBox="0 0 512 512"
                 height="1em"
                 width="1em"
@@ -31,7 +31,7 @@ const SearchedHotel = ({ hotel, handleEdit, handleDelete, handleTagClick }) => {
               <svg
                 stroke="currentColor"
                 fill="currentColor"
-                stroke-width="0"
+                strokeWidth="0"
                 viewBox="0 0 512 512"
                 height="1em"
                 width="1em"
@@ -45,7 +45,7 @@ const SearchedHotel = ({ hotel, handleEdit, handleDelete, handleTagClick }) => {
               <svg
                 stroke="currentColor"
                 fill="currentColor"
-                stroke-width="0"
+                strokeWidth="0"
                 viewBox="0 0 640 512"
                 height="1em"
                 width="1em"
@@ -59,7 +59,7 @@ const SearchedHotel = ({ hotel, handleEdit, handleDelete, handleTagClick }) => {
               <svg
                 stroke="currentColor"
                 fill="currentColor"
-                stroke-width="0"
+                strokeWidth="0"
                 viewBox="0 0 576 512"
                 height="1em"
                 width="1em"
@@ -73,7 +73,7 @@ const SearchedHotel = ({ hotel, handleEdit, handleDelete, handleTagClick }) => {
               <svg
                 stroke="currentColor"
                 fill="currentColor"
-                stroke-width="0"
+                strokeWidth="0"
                 viewBox="0 0 24 24"
                 height="1em"
                 width="1em"
@@ -88,7 +88,7 @@ const SearchedHotel = ({ hotel, handleEdit, handleDelete, handleTagClick }) => {
               <svg
                 stroke="currentColor"
                 fill="currentColor"
-                stroke-width="0"
+                strokeWidth="0"
                 version="1.2"
                 baseProfile="tiny"
                 viewBox="0 0 24 24"
@@ -104,7 +104,7 @@ const SearchedHotel = ({ hotel, handleEdit, handleDelete, handleTagClick }) => {
               <svg
                 stroke="currentColor"
                 fill="currentColor"
-                stroke-width="0"
+                strokeWidth="0"
                 viewBox="0 0 16 16"
                 height="1em"
                 width="1em"
@@ -119,7 +119,7 @@ const SearchedHotel = ({ hotel, handleEdit, handleDelete, handleTagClick }) => {
               <svg
                 stroke="currentColor"
                 fill="currentColor"
-                stroke-width="0"
+                strokeWidth="0"
                 version="1.1"
                 id="Layer_1"
                 x="0px"

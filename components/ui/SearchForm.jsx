@@ -8,13 +8,13 @@ import Travelers from './Travelers';
 const SearchForm = ({ isHomePage = true }) => {
   const [hotelName, setHotelName] = useState('');
   const [dateSelected, setDateSelected] = useState([]);
-  const [travelersInfo, setTravelersInfo] = useState([]);
+  const [occupancies, setOccupancies] = useState([]);
 
   // useEffect(() => {}, [hotelName]);
   const handleSearchOnclick = () => {
     console.log(hotelName);
     console.log(dateSelected);
-    console.log(travelersInfo);
+    console.log(occupancies);
   };
 
   return isHomePage ? (
@@ -85,12 +85,15 @@ const SearchForm = ({ isHomePage = true }) => {
               </span>
               <Travelers
                 isHomePage={isHomePage}
-                setTravelersInfo={setTravelersInfo}
+                setOccupancies={setOccupancies}
               />
             </div>
           </div>
           <div className="w-[100%] lg:w-[25%]">
-            <button className="bg-[#1893F8] flex flex-row py-2 px-0 lg:px-2 lg:py-5 space-x-2 rounded-lg justify-center items-center w-full searchbar">
+            <button
+              onClick={handleSearchOnclick}
+              className="bg-[#1893F8] flex flex-row py-2 px-0 lg:px-2 lg:py-5 space-x-2 rounded-lg justify-center items-center w-full searchbar"
+            >
               <svg
                 width="17"
                 height="18"
@@ -251,7 +254,10 @@ const SearchForm = ({ isHomePage = true }) => {
           </div>
         </div>
         <div className=" w-full lg:w-[auto] ">
-          <button className="bg-[#1893F8] flex flex-row py-2 px-0 md:px-5 md:py-5 space-x-2 rounded-lg justify-center items-center lg:w-auto w-full">
+          <button
+            onClick={handleSearchOnclick}
+            className="bg-[#1893F8] flex flex-row py-2 px-0 md:px-5 md:py-5 space-x-2 rounded-lg justify-center items-center lg:w-auto w-full"
+          >
             <svg
               width="17"
               height="18"
