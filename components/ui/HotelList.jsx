@@ -286,9 +286,11 @@ const HotelList = ({ hotels, isSearching }) => {
       </div>
       <div className="space-y-3">
         <div className="relative">
-          <List height={1500} itemCount={hotels.length} itemSize={300}>
-            {HotelListItem}
-          </List>
+          {!isSearching && (
+            <List height={1500} itemCount={hotels.length} itemSize={300}>
+              {HotelListItem}
+            </List>
+          )}
         </div>
       </div>
     </div>

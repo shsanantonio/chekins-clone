@@ -41,7 +41,14 @@ const defaultSearchParams = {
   correlationId: 'chkIDffe5aefa-817c-4fe3-a602-bb2135909b1f',
 };
 
-const SearchForm = ({ isHomePage = true }) => {
+const SearchForm = ({
+  isHomePage = true,
+  fetchHotels,
+  fetchHotelAvailability,
+  setAvailableHotels,
+  setFilteredHotels,
+  setIsSearching,
+}) => {
   const router = useRouter();
   const [searchFormData, setSearchFormData] = useState(() => {
     if (typeof window !== 'undefined') {
@@ -81,7 +88,32 @@ const SearchForm = ({ isHomePage = true }) => {
       })
     );
 
-    router.push('/hotel-listing');
+    if (isHomePage) {
+      router.push('/hotel-listing');
+    } else {
+      Promise.all([fetchHotels(), fetchHotelAvailability()]).then(
+        ([hotels, hotelAvailabilities]) => {
+          const newHotels = hotelAvailabilities.map((hotelAvailability) => {
+            const details = hotels.find(
+              (hotel) => hotel.id === hotelAvailability.id
+            );
+
+            return {
+              ...hotelAvailability,
+              ...details,
+            };
+          });
+
+          const sortedHotels = newHotels.sort((a, b) =>
+            Number(a.relevanceScore) < Number(b.relevanceScore) ? 1 : -1
+          );
+
+          setAvailableHotels(sortedHotels);
+          setFilteredHotels(sortedHotels);
+          setIsSearching(false);
+        }
+      );
+    }
   };
 
   return isHomePage ? (

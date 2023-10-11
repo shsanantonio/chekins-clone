@@ -47,18 +47,17 @@ const HotelListing = () => {
   const [availableHotels, setAvailableHotels] = useState([]);
   const [filteredHotels, setFilteredHotels] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
-  const [searchFormData, setSearchFormData] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const value = localStorage.getItem('searchParams');
-
-      return value ? JSON.parse(value) : defaultSearchParams;
-    }
-
-    return defaultSearchParams;
-  });
 
   const fetchHotels = async () => {
     setIsSearching(true);
+
+    let body = defaultSearchParams;
+
+    if (typeof window !== 'undefined') {
+      const value = localStorage.getItem('searchParams');
+
+      body = value ? JSON.parse(value) : defaultSearchParams;
+    }
 
     try {
       const response = await fetch(
@@ -66,7 +65,7 @@ const HotelListing = () => {
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(searchFormData),
+          body: JSON.stringify(body),
         }
       );
       const data = await response.json();
@@ -78,13 +77,21 @@ const HotelListing = () => {
   const fetchHotelAvailability = async () => {
     setIsSearching(true);
 
+    let body = defaultSearchParams;
+
+    if (typeof window !== 'undefined') {
+      const value = localStorage.getItem('searchParams');
+
+      body = value ? JSON.parse(value) : defaultSearchParams;
+    }
+
     try {
       const response = await fetch(
         'https://checkins-hotel-api.vercel.app/api/v1/hotels/availability',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(searchFormData),
+          body: JSON.stringify(body),
         }
       );
       const data = await response.json();
@@ -120,7 +127,14 @@ const HotelListing = () => {
 
   return (
     <div className="relative w-full container mx-auto lg:w-full xl:w-11/12 items-center">
-      <SearchForm isHomePage={false} />
+      <SearchForm
+        isHomePage={false}
+        fetchHotels={fetchHotels}
+        fetchHotelAvailability={fetchHotelAvailability}
+        setAvailableHotels={setAvailableHotels}
+        setFilteredHotels={setFilteredHotels}
+        setIsSearching={setIsSearching}
+      />
       <div className="font-Montserrat container px-0 lg:px-3 xl:px-0 lg:w-full xl:w-11/12 flex flex-col mt-4 mx-auto">
         <div className="flex flex-row md:space-x-4 space-x-0 space-y-4 md:space-y-0">
           <div className="hidden  relative z-10  lg:flex flex-col w-3/12 space-y-2">
