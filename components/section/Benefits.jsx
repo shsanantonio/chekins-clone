@@ -27,7 +27,7 @@ const Benefits = () => {
       <div className="container font-normal text-base leading-7 flex flex-col px-4 lg:w-10/12 mx-auto mt-10 space-y-12 md:space-y-6 ">
         <div className="flex flex-col space-y-12 ">
           <div className="text-center items-center justify-center  md:text-left">
-            <span className="text-[#0276D4] font-bold text-sm">Benefits</span>
+            <span className="text-[#0177B7] font-bold text-sm">Benefits</span>
             <h2 className="text-4xl font-bold font-homepage text-center text-bluedark md:text-left">
               Book With Us
             </h2>

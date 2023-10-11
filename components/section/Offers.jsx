@@ -26,7 +26,7 @@ const Offers = () => {
         <div className="flex flex-col space-y-12 ">
           <div className="text-center flex flex-row  justify-center  md:justify-between items-center  md:text-left">
             <div>
-              <span className="text-[#0276D4] font-bold text-sm">Offers</span>
+              <span className="text-[#0177B7] font-bold text-sm">Offers</span>
               <h2 className="font-homepage text-4xl font-bold text-center text-bluedark md:text-left">
                 Exclusive Offers
               </h2>
@@ -107,7 +107,7 @@ const Offers = () => {
                         >
                           <div
                             className=" bg-[#fFFF] border-[#EFEFEF] border-[1px] shadow-xl w-[350px] items-center justify-center rounded-md 2xl:h-[148px] h-[125px]"
-                            tabIndex={offer.id}
+                            tabIndex="0"
                           >
                             <div className="space-x-4 flex flex-row px-2 py-2 justify-center">
                               <img

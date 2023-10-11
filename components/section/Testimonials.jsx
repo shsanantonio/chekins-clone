@@ -5,7 +5,7 @@ const Testimonials = () => {
         <div className="flex flex-col space-y-12">
           <div className="text-center items-center flex flex-row justify-between  md:text-left">
             <div>
-              <span className="text-[#0276D4] font-bold text-sm">
+              <span className="text-[#0177B7] font-bold text-sm">
                 Testimonials
               </span>
               <h2 className="font-homepage text-4xl font-bold text-center text-bluedark md:text-left">

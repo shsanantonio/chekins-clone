@@ -17,7 +17,7 @@ const WeAreUnique = async () => {
         <div className="flex flex-col space-y-12">
           <div className="text-center flex flex-row justify-center  items-center md:justify-between  md:text-left">
             <div className="justify-center items-center">
-              <span className="text-[#0276D4] font-bold text-sm">
+              <span className="text-[#0177B7] font-bold text-sm">
                 We are unique
               </span>
               <h2 className="font-homepage text-4xl font-bold text-center text-bluedark md:text-left">
