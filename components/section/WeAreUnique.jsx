@@ -25,7 +25,10 @@ const WeAreUnique = async () => {
               </h2>
             </div>
             <div className="md:flex flex-row space-x-5 hidden">
-              <button className="hover:bg-[#1893F8] fill-darkgreyishblue hover:fill-white px-4 py-3 rounded-md">
+              <button
+                aria-label="Previous Benefits"
+                className="hover:bg-[#1893F8] fill-darkgreyishblue hover:fill-white px-4 py-3 rounded-md"
+              >
                 <svg
                   width="10"
                   height="16"
@@ -40,7 +43,10 @@ const WeAreUnique = async () => {
                   ></path>
                 </svg>
               </button>
-              <button className="bg-[#1893F8] px-4 py-3 rounded-md">
+              <button
+                aria-label="Next Benefits"
+                className="bg-[#1893F8] px-4 py-3 rounded-md"
+              >
                 <svg
                   width="10"
                   height="16"

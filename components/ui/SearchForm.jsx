@@ -196,6 +196,7 @@ const SearchForm = ({
           </div>
           <div className="w-[100%] lg:w-[25%]">
             <button
+              aria-label="Search"
               onClick={handleSearchOnclick}
               className="bg-[#1893F8] flex flex-row py-2 px-0 lg:px-2 lg:py-5 space-x-2 rounded-lg justify-center items-center w-full searchbar"
             >
@@ -363,6 +364,7 @@ const SearchForm = ({
         </div>
         <div className=" w-full lg:w-[auto] ">
           <button
+            aria-label="Search"
             onClick={handleSearchOnclick}
             className="bg-[#1893F8] flex flex-row py-2 px-0 md:px-5 md:py-5 space-x-2 rounded-lg justify-center items-center lg:w-auto w-full"
           >

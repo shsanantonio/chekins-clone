@@ -80,7 +80,10 @@ const PopularLocations = () => {
               </h2>
             </div>
             <div className="md:flex flex-row space-x-5 hidden">
-              <button className="hover:bg-[#1893F8]  bg-[#fff] fill-darkgreyishblue hover:fill-white px-4 py-3 rounded-md">
+              <button
+                aria-label="Previous Location"
+                className="hover:bg-[#1893F8]  bg-[#fff] fill-darkgreyishblue hover:fill-white px-4 py-3 rounded-md"
+              >
                 <svg
                   width="10"
                   height="16"
@@ -95,7 +98,10 @@ const PopularLocations = () => {
                   ></path>
                 </svg>
               </button>
-              <button className="bg-[#1893F8] px-4 py-3 rounded-md">
+              <button
+                aria-label="Next Location"
+                className="bg-[#1893F8] px-4 py-3 rounded-md"
+              >
                 <svg
                   width="10"
                   height="16"
@@ -125,13 +131,6 @@ const PopularLocations = () => {
               className="sc-eDvSVe eTfUIS rec rec-carousel"
               style={{ height: '523px' }}
             >
-              <button
-                tabIndex="0"
-                className="sc-bcXHqe hGRYOm rec rec-arrow rec rec-arrow-left hidden"
-                type="button"
-              >
-                ❮
-              </button>
               <div className="sc-dkrFOg itwfLR rec rec-slider-container">
                 <div
                   className="sc-hLBbgP gpusub rec rec-slider"
@@ -217,13 +216,6 @@ const PopularLocations = () => {
                   </div>
                 </div>
               </div>
-              <button
-                tabIndex="0"
-                className="sc-bcXHqe hGPzOw rec rec-arrow rec rec-arrow-right hidden"
-                type="button"
-              >
-                ❯
-              </button>
             </div>
             <div className="flex flex-row space-x-1 md:hidden cursor-pointer">
               <div className="mt-4 rounded-full  h-1 bg-[#5C6A7A] w-3 bg-opacity-40"></div>

@@ -13,7 +13,10 @@ const Testimonials = () => {
               </h2>
             </div>
             <div className="md:flex flex-row space-x-5 hidden">
-              <button className="hover:bg-[#1893F8] fill-darkgreyishblue hover:fill-white px-4 py-3 rounded-md">
+              <button
+                aria-label="Previous Testimonial"
+                className="hover:bg-[#1893F8] fill-darkgreyishblue hover:fill-white px-4 py-3 rounded-md"
+              >
                 <svg
                   width="10"
                   height="16"
@@ -28,7 +31,10 @@ const Testimonials = () => {
                   ></path>
                 </svg>
               </button>
-              <button className="bg-[#1893F8] px-4 py-3 rounded-md">
+              <button
+                aria-label="Previous Testimonial"
+                className="bg-[#1893F8] px-4 py-3 rounded-md"
+              >
                 <svg
                   width="10"
                   height="16"

@@ -23,7 +23,10 @@ const Newsletter = () => {
             onChange={handlerOnchange}
           />
           <div className="absolute top-2 right-2">
-            <button className="h-10 px-3.5 text-white rounded-full bg-[#002248]">
+            <button
+              className="h-10 px-3.5 text-white rounded-full bg-[#002248]"
+              aria-label="Subscribe"
+            >
               Subscribe
             </button>
           </div>

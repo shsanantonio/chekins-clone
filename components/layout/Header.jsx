@@ -32,6 +32,7 @@ const Header = () => {
               id="dropdownMenuButton1"
               data-bs-toggle="dropdown"
               aria-expanded="false"
+              aria-label="Dropdown Menu Button"
             >
               <span className="hover:text-[#1893F8]">
                 <div className="flex flex-row items-center space-x-2">
@@ -49,7 +50,10 @@ const Header = () => {
               aria-labelledby="dropdownMenuButton1"
             >
               <li>
-                <button className="dropdown-item  py-2 px-4  block w-full whitespace-nowrap bg-transparent  hover:bg-[#1893F8]">
+                <button
+                  className="dropdown-item  py-2 px-4  block w-full whitespace-nowrap bg-transparent  hover:bg-[#1893F8]"
+                  aria-label="Language"
+                >
                   <div className="flex flex-row items-center space-x-2">
                     <img
                       src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAShSURBVHgBvZd7TBRHHMe/s6wL3h1yVHmkpXaBlDamFEzaakxqj/YPbWMr1ta2SnlI2piYhiP1jzY1BZsmTV9waK1JqQWMTQ0FxSqP1geeEZE0hRPbKpXH8ZCHWG71joM79nY7uxUiInh3iJ9kk5nZ+e1vfvN7zCyBFxgMRXqwo4lMALdWhmTQw8UfZM36m68F+lgA2QJJNpPq8gpvvknuppDhxCxtMGd0ONyqIo12HpzDYzjJ/jadmBUyKYbkLiE1FVafFR8obcr6/Y+e3EZLv35z6lLUHG9Fb68d2z9YiS/y6lCx/UnMyMJQqycyYodOpyv2WnH54eb80rI/jUr78UcXofvKDYhjHoSHa9FhFTBkG8HRgxvhDYQQk0ajyb59nL194PVNPxa1XBpMdw67IdN+cHAgrv3rRGAgC49Hhsst/i940gwvMYp79+nZzNSMSQu6tZO17Zd8w7O8cde3DXhxdRyNFxlVv15GWkoiTp+xqtZ+mvM8PvnMjBqpGr5BTKSyNHuK4osXe9I/z6sv6uwSsOWdp7BvvwUeCdjw6hLsP3AB/OIQLHs6CkeqWjDsHMOJBxvhKyJhsrkfdpsmFO/ZU8+f/7uv1iaM8iELgqhfAIfdpRiMsDANAgIY9PbZ1clxcYtQV9+Fwz+/BT8Q3G53dGhoqMAoPXN9V1rPlRu80lYso20sXKRRU6e9w4b4JyIQwDKwXXchNuYB1dd+ouc4zjhhcdKq7zpSNyXyNcdacfXqMHI/MuBLU536OjN9KXbubkBMtB4rli2m296sfuF47CX4hegRmH+s0STz3bLk5cujDh2pbEFQEIskQzSqaUApVo6OiOjuuY6E+Eg0Nfdj2OHG2pcfQ2nZXzgxfQG5O0ROYts6hwwPRQUjJCQIY24PGpv6oNNyGBwcBsMQaDTz0NktUH/Lqr8HB51qmomvvAR/8WjmJ9M8JgnnGnqwft0SnDnbhda2IbyftQJ5O+vBUr+mpSTgp9ILeDgqhPo3FKdOW1Vhd8oGzILnWCIjceuWZ2D65hwiaGXa+EY8vi44ixcMMbRCOfF9USMy3k7Esdp2VFZfxscfrsRXdFFk8Br8RZYlniStKpRj+FC0W23Q6Tjo6ZYrUR0czEHZUzv1qxJYff0OjFCfR0ToMDDgmOmQ8ApWQ0uholSBnkDqo2C3uycmtXcIE21FqRYiZgvp7R2yuVyi3ichuhXhZBT+QrdaYBcs4KyEBCbCR2To4C/0xLKw3KGjZuIc8VnxbJA1888Tec1rBnpjqMX9RJLWsWBFixzxiECT1ic/+82o28rs3VWh1mq73Z7LMEwO7g87tFptrno6iaKonJEC5hgaVFZqYLHaHh+UN281ypKUjzlEmheYwRaaiicpVpWvWW+CzGRhLpClAlJVbhzvTrllugpLihEZloZ7CGlpK+G2vZc+aexOE2mwmagv7onl9DgtoHdr45TFTCfgcDjSmf6BHDJk4+EHJDBIEGN55UJvuuP7mYTl1W/yNM/TaYFRtp6Hdwj0hlEAh2gipyqmzRQCL6GBlwwJBpoTCVRMKbG3/LTJ9H9JNoMhFVShZSaF4/wHRwHZCSvynPcAAAAASUVORK5CYII="
@@ -70,6 +74,7 @@ const Header = () => {
               id="dropdownMenuButton2"
               data-bs-toggle="dropdown"
               aria-expanded="false"
+              aria-label="Currency"
             >
               <span className=" hover:text-[#1893F8]">
                 <div className="flex flex-row items-center space-x-2">
@@ -97,7 +102,10 @@ const Header = () => {
               aria-labelledby="dropdownMenuButton2"
             >
               <li>
-                <button className="dropdown-item nav-link py-2 px-4 block w-full whitespace-nowrap bg-transparent hover:bg-[#1893F8]">
+                <button
+                  className="dropdown-item nav-link py-2 px-4 block w-full whitespace-nowrap bg-transparent hover:bg-[#1893F8]"
+                  aria-label="Currency"
+                >
                   <div className="flex flex-row items-center space-x-2">
                     <div className="border-[#fff] ">
                       <svg
@@ -153,6 +161,7 @@ const Header = () => {
         <button
           id="menu-btn"
           name="menu-btn"
+          aria-label="Menu"
           className="block hamburger xl:hidden focus:outline-none"
         >
           <span className="hamburger-top"></span>
