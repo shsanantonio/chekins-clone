@@ -44,7 +44,10 @@ const defaultSearchParams = {
 const SearchForm = ({ isHomePage = true }) => {
   const router = useRouter();
   const [searchFormData, setSearchFormData] = useState(() => {
-    const value = localStorage.getItem('searchParams');
+    const value =
+      typeof window !== 'undefined'
+        ? localStorage.getItem('searchParams')
+        : defaultSearchParams;
 
     if (value) {
       return JSON.parse(value);
