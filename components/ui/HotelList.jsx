@@ -204,20 +204,28 @@ const HotelList = ({ hotels, isSearching }) => {
           <div className="lg:flex hidden flex-row justify-between text-center items-center ">
             <span className="line-through text-[17px] text-start text-[#5C6A7A]">
               {' '}
-              $656{' '}
+              ${hotels[index].rate.baseRate.toFixed(0)}
             </span>
             <span className="text-[#1B1B1B] text-end font-bold text-[23px]">
               {' '}
-              $511 <span className="text-[9px]">/night</span>
+              ${hotels[index].rate.dailyTotalRate.toFixed(0)}
+              <span className="text-[9px]">/night</span>
             </span>
           </div>
           <div className="text-[#1B1B1B] lg:flex hidden flex-col font-bold text-center text-[17px]">
-            <span>Save $1021 </span>
+            <span>
+              Save $
+              {(
+                (hotels[index].rate.baseRate -
+                  hotels[index].rate.dailyTotalRate) *
+                7
+              ).toFixed(0)}{' '}
+            </span>
             <span className="text-[8px]">for 7 night(s)</span>
           </div>
           <div className="lg:flex hidden flex-col text-center pl-1 items-center">
             <span className="text-[17px]">
-              $3571 total{' '}
+              ${hotels[index].rate.totalRate.toFixed(0)}
               <span className="text-[9px] text-[#5C6A7A]"> for 1 room</span>
             </span>
             <span className="text-[9px] text-center text-[#5C6A7A]">
@@ -228,17 +236,17 @@ const HotelList = ({ hotels, isSearching }) => {
             <div className="flex flex-col text-center lg:text-end">
               <span className="line-through text-[17px] text-[#5C6A7A]">
                 {' '}
-                $656{' '}
+                ${hotels[index].rate.baseRate.toFixed(0)}{' '}
               </span>
               <span className="text-[#1B1B1B] font-bold text-[23px]">
                 {' '}
-                $511{' '}
+                ${hotels[index].rate.dailyTotalRate.toFixed(0)}{' '}
               </span>
               <span className="text-[9px] ">per night per room</span>
             </div>
             <div className="items-center justify-end flex flex-col"></div>
             <div className="flex flex-col text-end">
-              <span>$3571 total</span>
+              <span>${hotels[index].rate.totalRate.toFixed(0)} total</span>
               <span className="text-[9px] text-[#5C6A7A]"> for 1 room</span>
               <span className="text-[9px] text-[#5C6A7A]">
                 Includes taxes and fees
@@ -246,7 +254,13 @@ const HotelList = ({ hotels, isSearching }) => {
             </div>
           </div>
           <span className="text-[#1893F8] w-full lg:hidden  text-center text-[15px]">
-            Total Savings $1021 for 7 night(s)
+            Total Savings $
+            {(
+              (hotels[index].rate.baseRate -
+                hotels[index].rate.dailyTotalRate) *
+              7
+            ).toFixed(0)}{' '}
+            for 7 night(s)
           </span>
           <div className="flex justify-center mb-2 lg:mb-0 items-end">
             <button

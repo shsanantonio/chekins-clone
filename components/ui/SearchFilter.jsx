@@ -27,12 +27,46 @@ const popularAmenities = [
 ];
 
 const SearchFilter = ({ hotels, setFilteredHotels }) => {
+  const [searchText, setSearchText] = useState('');
   const [checkedPropertyTypes, setCheckPropertyTypes] = useState([]);
   const [checkedPopularFilters, setCheckedPopularFilters] = useState([]);
   const [checkedPopularAmenities, setCheckedPopularAmenities] = useState([]);
 
+  const counter = hotels.reduce(
+    (accumulator, hotel) => {
+      if (hotel.type === 'Hotel' || hotel.type === '') {
+        accumulator['typeHotel'] = accumulator?.typeHotel + 1 || 1;
+      } else if (hotel.type === 'Villa') {
+        accumulator['typeVilla'] = accumulator?.typeVilla + 1 || 1;
+      } else if (hotel.type === 'Resort') {
+        accumulator['typeResort'] = accumulator?.typeResort + 1 || 1;
+      } else if (hotel.type === 'House') {
+        accumulator['typeHouse'] = accumulator?.typeHouse + 1 || 1;
+      } else if (hotel.type === 'Palace') {
+        accumulator['typePalace'] = accumulator?.typePalace + 1 || 1;
+      } else if (hotel.type === 'Apartment') {
+        accumulator['typeApartment'] = accumulator?.typeApartment + 1 || 1;
+      } else if (hotel.type === 'Condo') {
+        accumulator['typeCondo'] = accumulator?.typeCondo + 1 || 1;
+      } else if (hotel.type === 'Inn') {
+        accumulator['typeInn'] = accumulator?.typeInn + 1 || 1;
+      }
+
+      return accumulator;
+    },
+    {
+      typeHotel: 0,
+      typeVilla: 0,
+      typeResort: 0,
+      typeHouse: 0,
+      typePalace: 0,
+      typeApartment: 0,
+      typeCondo: 0,
+      typeInn: 0,
+    }
+  );
   useEffect(() => {
-    const newFilteredHotels = hotels.filter((hotel) => {
+    let newFilteredHotels = hotels.filter((hotel) => {
       return (
         (checkedPropertyTypes.includes('typeHotel') &&
           (hotel.type === 'Hotel' || hotel.type === '')) ||
@@ -80,10 +114,21 @@ const SearchFilter = ({ hotels, setFilteredHotels }) => {
       );
     });
 
+    if (searchText !== '') {
+      newFilteredHotels = newFilteredHotels.filter((hotel) =>
+        hotel.name?.toLowerCase().includes(searchText?.toLowerCase())
+      );
+    }
+
     setFilteredHotels(
       newFilteredHotels.length > 0 ? newFilteredHotels : hotels
     );
-  }, [checkedPropertyTypes, checkedPopularFilters, checkedPopularAmenities]);
+  }, [
+    checkedPropertyTypes,
+    checkedPopularFilters,
+    checkedPopularAmenities,
+    searchText,
+  ]);
 
   return (
     <div className="pt-3 border-[#E0E0E0] border-[2px] rounded-lg  px-2 py-2 text-[#002248] flex-col flex gap-3 font-Montserrat">
@@ -112,7 +157,8 @@ const SearchFilter = ({ hotels, setFilteredHotels }) => {
               type="text"
               className="py-3 text-sm text-black border-[#0C08AE] border-[2px] w-full rounded-md pl-10 focus:outline-none"
               id="nameFilter"
-              value=""
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
             />
           </div>
         </div>
@@ -147,7 +193,7 @@ const SearchFilter = ({ hotels, setFilteredHotels }) => {
               <label htmlFor={propertyType.id}>{propertyType.label}</label>
             </div>
             <span className="text-[#5C6A7A] text-[15px]">
-              [{propertyType.count}]
+              [{counter[propertyType.id]}]
             </span>
           </div>
         ))}
@@ -161,6 +207,7 @@ const SearchFilter = ({ hotels, setFilteredHotels }) => {
               placeholder="Min"
               className="py-3 text-sm text-black border-[#0C08AE] border-[2px] w-full rounded-md pl-10 focus:outline-none"
               value=""
+              readOnly
             />
           </div>
           <div className="relative w-1/2 text-gray-600">
@@ -170,6 +217,7 @@ const SearchFilter = ({ hotels, setFilteredHotels }) => {
               placeholder="Max"
               className="py-3 text-sm text-black border-[#0C08AE] border-[2px] w-full rounded-md pl-10 focus:outline-none"
               value=""
+              readOnly
             />
           </div>
         </div>
