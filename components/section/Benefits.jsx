@@ -27,7 +27,7 @@ const Benefits = () => {
       <div className="container font-normal text-base leading-7 flex flex-col px-4 lg:w-10/12 mx-auto mt-10 space-y-12 md:space-y-6 ">
         <div className="flex flex-col space-y-12 ">
           <div className="text-center items-center justify-center  md:text-left">
-            <span className="text-[#1893f8] font-bold text-sm">Benefits</span>
+            <span className="text-[#0276D4] font-bold text-sm">Benefits</span>
             <h2 className="text-4xl font-bold font-homepage text-center text-bluedark md:text-left">
               Book With Us
             </h2>
@@ -54,7 +54,7 @@ const Benefits = () => {
               <div className="flex space-y-3   items-center flex-col">
                 <div className="rounded-l-full  md:bg-transparent">
                   <div className="flex items-center space-y-2">
-                    <div className="px-[25px] text-white rounded-full py-[24px] bg-[#1893F8]">
+                    <div className="px-[25px] text-white rounded-full py-[24px] bg-[#0276D4]">
                       <svg
                         width="24"
                         height="24"
@@ -112,7 +112,7 @@ const Benefits = () => {
               <div className="flex flex-col space-y-3  items-center  md:flex-col">
                 <div className="rounded-l-full md:bg-transparent">
                   <div className="flex items-center space-x-2">
-                    <div className="px-[25px] text-white rounded-full py-[24px] bg-[#1893F8]">
+                    <div className="px-[25px] text-white rounded-full py-[24px] bg-[#0276D4]">
                       <svg
                         width="24"
                         height="24"

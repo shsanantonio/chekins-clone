@@ -17,7 +17,7 @@ const WeAreUnique = async () => {
         <div className="flex flex-col space-y-12">
           <div className="text-center flex flex-row justify-center  items-center md:justify-between  md:text-left">
             <div className="justify-center items-center">
-              <span className="text-[#1893f8] font-bold text-sm">
+              <span className="text-[#0276D4] font-bold text-sm">
                 We are unique
               </span>
               <h2 className="font-homepage text-4xl font-bold text-center text-bluedark md:text-left">
@@ -27,7 +27,7 @@ const WeAreUnique = async () => {
             <div className="md:flex flex-row space-x-5 hidden">
               <button
                 aria-label="Previous Benefits"
-                className="hover:bg-[#1893F8] fill-darkgreyishblue hover:fill-white px-4 py-3 rounded-md"
+                className="hover:bg-[#0276D4] fill-darkgreyishblue hover:fill-white px-4 py-3 rounded-md"
               >
                 <svg
                   width="10"
@@ -45,7 +45,7 @@ const WeAreUnique = async () => {
               </button>
               <button
                 aria-label="Next Benefits"
-                className="bg-[#1893F8] px-4 py-3 rounded-md"
+                className="bg-[#0276D4] px-4 py-3 rounded-md"
               >
                 <svg
                   width="10"
@@ -115,7 +115,7 @@ const WeAreUnique = async () => {
             </div>
           </div>
           <div className="flex flex-row space-x-1 md:hidden cursor-pointer">
-            <div className="mt-4 rounded-full  h-1 bg-[#1893F8] w-5"></div>
+            <div className="mt-4 rounded-full  h-1 bg-[#0276D4] w-5"></div>
             <div className="mt-4 rounded-full  h-1 bg-[#5C6A7A] w-3 bg-opacity-40"></div>
           </div>
         </div>

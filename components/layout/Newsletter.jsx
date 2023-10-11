@@ -5,7 +5,7 @@ const handlerOnchange = () => {};
 const Newsletter = () => {
   return (
     <div className="absolute left-0 right-0 top-[-86px]">
-      <div className="items-center bg-[#1893f8] rounded-tr-[126px] justify-between m-auto max-w-[1280px] py-[53px] relative w-[80%] px-[73px]  gap-3 lg:gap-0 flex flex-col lg:flex-row">
+      <div className="items-center bg-[#0276D4] rounded-tr-[126px] justify-between m-auto max-w-[1280px] py-[53px] relative w-[80%] px-[73px]  gap-3 lg:gap-0 flex flex-col lg:flex-row">
         <div className="texts lg:w-1/2 text-center w-full text-white ">
           <h2 className="section-title text-[20px] lg:text-[28px] font-bold">
             Join Our Newsletter

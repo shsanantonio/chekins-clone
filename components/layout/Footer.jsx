@@ -74,16 +74,16 @@ const Footer = () => {
                 <span className="font-bold text-[22px] 2xl:text-[25px]">
                   Chekins
                 </span>
-                <a href="/AboutUs" className="hover:text-[#1893F8]">
+                <a href="/AboutUs" className="hover:text-[#0276D4]">
                   About Us
                 </a>
-                <a href="/PriceGuarantee" className="hover:text-[#1893F8]">
+                <a href="/PriceGuarantee" className="hover:text-[#0276D4]">
                   Price Guarantee
                 </a>
-                <a href="/FAQ" className="hover:text-[#1893F8]">
+                <a href="/FAQ" className="hover:text-[#0276D4]">
                   FAQ's
                 </a>
-                <a href="/membership" className="hover:text-[#1893F8]">
+                <a href="/membership" className="hover:text-[#0276D4]">
                   Chekins Membership
                 </a>
               </div>
@@ -92,16 +92,16 @@ const Footer = () => {
                 <span className="font-bold text-[22px] 2xl:text-[25px]">
                   Support
                 </span>
-                <a href="/HelpCenter" className="hover:text-[#1893F8]">
+                <a href="/HelpCenter" className="hover:text-[#0276D4]">
                   Help Center
                 </a>
-                <a href="/MyTrip" className="hover:text-[#1893F8]">
+                <a href="/MyTrip" className="hover:text-[#0276D4]">
                   My Trip
                 </a>
-                <a href="/TermsAndConditions" className="hover:text-[#1893F8]">
+                <a href="/TermsAndConditions" className="hover:text-[#0276D4]">
                   Terms &amp; Conditions
                 </a>
-                <a href="/contact-us" className="hover:text-[#1893F8]">
+                <a href="/contact-us" className="hover:text-[#0276D4]">
                   Contact Us
                 </a>
               </div>
@@ -113,14 +113,14 @@ const Footer = () => {
                   href="https://blogs.chekins.com"
                   rel="noopener noreferrer"
                   target="_blank"
-                  className="hover:text-[#1893F8]"
+                  className="hover:text-[#0276D4]"
                 >
                   Official Blog
                 </a>
-                <a href="/Reviews" className="hover:text-[#1893F8]">
+                <a href="/Reviews" className="hover:text-[#0276D4]">
                   Read Reviews
                 </a>
-                <a href="/Careers" className="hover:text-[#1893F8]">
+                <a href="/Careers" className="hover:text-[#0276D4]">
                   Careers
                 </a>
               </div>

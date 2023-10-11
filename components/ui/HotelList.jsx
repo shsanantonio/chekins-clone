@@ -253,7 +253,7 @@ const HotelList = ({ hotels, isSearching }) => {
               </span>
             </div>
           </div>
-          <span className="text-[#1893F8] w-full lg:hidden  text-center text-[15px]">
+          <span className="text-[#0276D4] w-full lg:hidden  text-center text-[15px]">
             Total Savings $
             {(
               (hotels[index].rate.baseRate -
@@ -264,7 +264,7 @@ const HotelList = ({ hotels, isSearching }) => {
           </span>
           <div className="flex justify-center mb-2 lg:mb-0 items-end">
             <button
-              className="bg-[#1893F8]  lg:w-[auto] rounded-full px-8 lg:px-4  text-[16px] lg:text-[12px] xl:text-[16px] font-bold py-2 text-white 
+              className="bg-[#0276D4]  lg:w-[auto] rounded-full px-8 lg:px-4  text-[16px] lg:text-[12px] xl:text-[16px] font-bold py-2 text-white 
                             "
             >
               View Details

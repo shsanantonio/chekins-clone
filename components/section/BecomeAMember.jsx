@@ -4,7 +4,7 @@ const BecomeAMember = () => {
       <div className="container items-center flex flex-col px-4 lg:w-10/12 mx-auto  space-y-12 md:space-y-6">
         <div className="flex flex-col space-y-12 w-full">
           <div className="text-center items-center justify-center w-full md:text-left">
-            <span className="text-[#1893f8] font-bold text-sm">
+            <span className="text-[#0276D4] font-bold text-sm">
               Become a Member
             </span>
             <h2 className="font-homepage text-4xl font-bold text-center text-bluedark md:text-left">
@@ -102,7 +102,7 @@ const BecomeAMember = () => {
                         <span>Book any hotel with no blackout dates</span>
                       </div>
                     </div>
-                    <button className="border-[#1893F8] text-[#1893F8] text-center py-2 text-[12px] px-3 w-full font-bold border-[1px] rounded-full items-center">
+                    <button className="border-[#0276D4] text-[#0276D4] text-center py-2 text-[12px] px-3 w-full font-bold border-[1px] rounded-full items-center">
                       Free until Sep 2023
                     </button>
                   </div>

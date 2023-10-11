@@ -198,7 +198,7 @@ const SearchForm = ({
             <button
               aria-label="Search"
               onClick={handleSearchOnclick}
-              className="bg-[#1893F8] flex flex-row py-2 px-0 lg:px-2 lg:py-5 space-x-2 rounded-lg justify-center items-center w-full searchbar"
+              className="bg-[#0276D4] flex flex-row py-2 px-0 lg:px-2 lg:py-5 space-x-2 rounded-lg justify-center items-center w-full searchbar"
             >
               <svg
                 width="17"
@@ -366,7 +366,7 @@ const SearchForm = ({
           <button
             aria-label="Search"
             onClick={handleSearchOnclick}
-            className="bg-[#1893F8] flex flex-row py-2 px-0 md:px-5 md:py-5 space-x-2 rounded-lg justify-center items-center lg:w-auto w-full"
+            className="bg-[#0276D4] flex flex-row py-2 px-0 md:px-5 md:py-5 space-x-2 rounded-lg justify-center items-center lg:w-auto w-full"
           >
             <svg
               width="17"

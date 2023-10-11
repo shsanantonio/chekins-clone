@@ -46,7 +46,7 @@ const Chatbox = () => {
 
   return (
     <div className="z-10 h-[400px] w-[300px] border-[1px] border-[#102A43] border-solid fixed bottom-[130px] right-[40px] rounded-[12px] flex flex-col overflow-hidden">
-      <div className="h-[36px] bg-[#1893F8] rounded-tl-[9px] rounded-tr-[9px] rounded-b-[0] rounded-l-[0] flex items-center text-[#FFFFFF] px-[12px]">
+      <div className="h-[36px] bg-[#0276D4] rounded-tl-[9px] rounded-tr-[9px] rounded-b-[0] rounded-l-[0] flex items-center text-[#FFFFFF] px-[12px]">
         Support Bot
       </div>
       <ul className="flex-1 flex flex-col px-[12px] bg-[#F0F4F8] overflow-auto">
@@ -59,7 +59,7 @@ const Chatbox = () => {
               key={index}
               className={
                 isUser
-                  ? 'py-[8px] px-[12px] rounded-[12px] bg-[#37B7FE] text-[#FFFFFF] w-[180px] self-end'
+                  ? 'py-[8px] px-[12px] rounded-[12px] bg-[#0276D4] text-[#FFFFFF] w-[180px] self-end'
                   : 'py-[8px] flex items-center'
               }
             >

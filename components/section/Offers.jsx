@@ -26,7 +26,7 @@ const Offers = () => {
         <div className="flex flex-col space-y-12 ">
           <div className="text-center flex flex-row  justify-center  md:justify-between items-center  md:text-left">
             <div>
-              <span className="text-[#1893f8] font-bold text-sm">Offers</span>
+              <span className="text-[#0276D4] font-bold text-sm">Offers</span>
               <h2 className="font-homepage text-4xl font-bold text-center text-bluedark md:text-left">
                 Exclusive Offers
               </h2>
@@ -34,7 +34,7 @@ const Offers = () => {
             <div className="md:flex flex-row space-x-5 hidden">
               <button
                 aria-label="Previous Offer"
-                className="hover:bg-[#1893F8] fill-darkgreyishblue hover:fill-white px-4 py-3 rounded-md"
+                className="hover:bg-[#0276D4] fill-darkgreyishblue hover:fill-white px-4 py-3 rounded-md"
               >
                 <svg
                   width="10"
@@ -52,7 +52,7 @@ const Offers = () => {
               </button>
               <button
                 aria-label="Next Offer"
-                className="bg-[#1893F8] px-4 py-3 rounded-md"
+                className="bg-[#0276D4] px-4 py-3 rounded-md"
               >
                 <svg
                   width="10"
@@ -131,7 +131,7 @@ const Offers = () => {
                                       <div className="bg-[#AEAEAE]  w-[2px] "></div>
                                     </div>
                                   </button>
-                                  <span className="text-[#fff] absolute -top-5 left-2 z-40 mb-2 mt-3 bg-[#1893F8] px-1 2xl:px-1.5 2xl:py-1 py-[2px] rounded-full 2xl:text-[10px] text-[7px]">
+                                  <span className="text-[#fff] absolute -top-5 left-2 z-40 mb-2 mt-3 bg-[#0276D4] px-1 2xl:px-1.5 2xl:py-1 py-[2px] rounded-full 2xl:text-[10px] text-[7px]">
                                     PROMO CODE
                                   </span>
                                 </div>
@@ -146,7 +146,7 @@ const Offers = () => {
               </div>
             </div>
             <div className="flex flex-row space-x-1 md:hidden cursor-pointer">
-              <div className="mt-4 rounded-full  h-1 bg-[#1893F8] w-5"></div>
+              <div className="mt-4 rounded-full  h-1 bg-[#0276D4] w-5"></div>
             </div>
           </div>
         </div>

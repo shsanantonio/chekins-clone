@@ -116,14 +116,14 @@ const TravelersOptions = ({ setOccupancies, setToggleTravelers }) => {
           <div className="w-2/4 flex justify-between">
             <button
               onClick={handleDecrementAdult}
-              className="border-[1px] rounded-full px-2 border-[#1893F8] text-[#1893F8]"
+              className="border-[1px] rounded-full px-2 border-[#0276D4] text-[#0276D4]"
             >
               -
             </button>
             <span>{adultCount}</span>
             <button
               onClick={handleIncrementAdult}
-              className="border-[1px] rounded-full px-2 border-[#1893F8] text-[#1893F8]"
+              className="border-[1px] rounded-full px-2 border-[#0276D4] text-[#0276D4]"
             >
               +
             </button>
@@ -141,7 +141,7 @@ const TravelersOptions = ({ setOccupancies, setToggleTravelers }) => {
             <span>{childrenCount}</span>
             <button
               onClick={handleIncrementChild}
-              className="border-[1px] rounded-full px-2 border-[#1893F8] text-[#1893F8]"
+              className="border-[1px] rounded-full px-2 border-[#0276D4] text-[#0276D4]"
             >
               +
             </button>
@@ -156,17 +156,17 @@ const TravelersOptions = ({ setOccupancies, setToggleTravelers }) => {
       </div>
       {roomArr}
 
-      <div className="flex justify-end items-end  text-[#1893F8] font-[600] hover:underline">
+      <div className="flex justify-end items-end  text-[#0276D4] font-[600] hover:underline">
         <button
           onClick={handleRoomClick}
-          className="bg-[#71b9f5bd] hover:bg-[#1893F8] rounded-md text-white px-1 py-1"
+          className="bg-[#71b9f5bd] hover:bg-[#0276D4] rounded-md text-white px-1 py-1"
         >
           Add room
         </button>
       </div>
       <button
         onClick={handleDoneOnClick}
-        className="bg-[#1893F8] rounded-full py-2 text-white "
+        className="bg-[#0276D4] rounded-full py-2 text-white "
       >
         Done
       </button>

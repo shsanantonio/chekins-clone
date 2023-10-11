@@ -3,7 +3,7 @@ import SearchForm from './SearchForm';
 
 const Hero = () => {
   return (
-    <div className="container bg-[#37B7FE] rounded-lg lg:w-10/12 flex flex-col  pt-10 px-6 mx-auto  ">
+    <div className="container bg-[#0276D4] rounded-lg lg:w-10/12 flex flex-col  pt-10 px-6 mx-auto  ">
       <div className="flex  space-y-0 items-center justify-between md:space-y-0 md:flex-row">
         <div className="flex flex-col mb-3 lg:mb-[44px] space-y-6 w-full ">
           <h1 className="max-w-full  font-header flex flex-col text-[33px] 2xl:text-[42px] font-[900] text-white text-center  md:text-left">

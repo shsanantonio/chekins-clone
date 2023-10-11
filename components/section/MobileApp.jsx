@@ -44,7 +44,7 @@ const MobileApp = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <circle cx="187" cy="187.034" r="187" fill="#1893F8"></circle>
+            <circle cx="187" cy="187.034" r="187" fill="#0276D4"></circle>
           </svg>
           <img
             src="/images/mobile.833230a7178b42e2a18a.webp"
