@@ -153,6 +153,9 @@ const SearchFilter = ({ hotels, setFilteredHotels }) => {
                 <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
             </span>
+            <label htmlFor="nameFilter" className="visually-hidden">
+              Location Name
+            </label>
             <input
               type="text"
               className="py-3 text-sm text-black border-[#0C08AE] border-[2px] w-full rounded-md pl-10 focus:outline-none"

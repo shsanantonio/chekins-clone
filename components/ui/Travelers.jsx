@@ -194,10 +194,17 @@ const Travelers = ({ occupancies, setOccupancies, isHomePage = true }) => {
 
   return (
     <div className="w-full flex flex-col">
-      {isHomePage && (
+      {isHomePage ? (
         <label
           htmlFor="roomInput"
           className="-mb-[4px] hidden lg:block ml-[30px] text-[13px] leading-6"
+        >
+          Travelers
+        </label>
+      ) : (
+        <label
+          htmlFor="roomInput"
+          className="-mb-[4px] hidden lg:block ml-[30px] text-[13px] leading-6 visually-hidden"
         >
           Travelers
         </label>
