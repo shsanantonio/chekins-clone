@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3001",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "next": "13.5.4",
+    "openai": "^4.11.1",
     "react": "^18",
     "react-datepicker": "^4.19.0",
     "react-dom": "^18",

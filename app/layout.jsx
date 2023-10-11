@@ -1,10 +1,10 @@
 import Header from '@/components/layout/Header';
 import Main from '@/components/layout/Main';
 import Footer from '@/components/layout/Footer';
+import Chatbot from '@/components/ui/Chatbot';
 
 import './globals.css';
 import { Inter } from 'next/font/google';
-import Image from 'next/image';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,6 +20,7 @@ export default function RootLayout(props) {
       <body className={inter.className}>
         <Header />
         <Main {...props} />
+        <Chatbot />
         <Footer />
       </body>
     </html>
