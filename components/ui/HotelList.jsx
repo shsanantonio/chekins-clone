@@ -278,7 +278,7 @@ const HotelList = ({ hotels, isSearching }) => {
   return (
     <div className="w-full  relative z-1 space-y-2 lg:w-9/12">
       <div className="flex flex-row gap-3 text-[15px]">
-        <span className="text-[15px]">
+        <span id="available-hotels-total" className="text-[15px]">
           {isSearching
             ? 'Getting lowest prices...'
             : hotels.length > 0 && `${hotels.length} Available Hotels`}
