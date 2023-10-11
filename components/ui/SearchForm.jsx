@@ -362,11 +362,11 @@ const SearchForm = ({
             </div>
           </div>
         </div>
-        <div className=" w-full lg:w-[auto] ">
+        <div className="w-full lg:w-[auto] ">
           <button
             aria-label="Search"
             onClick={handleSearchOnclick}
-            className="bg-[#0276D4] flex flex-row py-2 px-0 md:px-5 md:py-5 space-x-2 rounded-lg justify-center items-center lg:w-auto w-full"
+            className="bg-[#0276D4] flex flex-row py-2 px-0 md:px-5 md:py-5 space-x-2 rounded-lg justify-center items-center lg:w-auto w-full h-[46px]"
           >
             <svg
               width="17"
