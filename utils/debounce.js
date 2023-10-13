@@ -1,4 +1,4 @@
-const DELAY = 450;
+const DELAY = 300;
 
 const debounce = (func) => {
   let timer; // for the setTimeout function and so it can be cleared
